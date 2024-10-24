@@ -37,7 +37,7 @@ export function NintendoSwitch(props: JSX.IntrinsicElements["group"]) {
   return (
     <group {...props} dispose={null}>
       {/* Left Control */}
-      <group scale={0.01}>
+      <group>
         {/* Buttons */}
         <mesh geometry={nodes.Solid1_1.geometry} material={materials.M181818}>
           <Edges linewidth={2} threshold={25} color={"gray"} />
@@ -58,7 +58,7 @@ export function NintendoSwitch(props: JSX.IntrinsicElements["group"]) {
       </group>
 
       {/* Right Control */}
-      <group scale={0.01}>
+      <group>
         {/*Buttons */}
         <mesh geometry={nodes.Solid2_2.geometry} material={materials.M181818}>
           <Edges linewidth={2} threshold={25} color={"gray"} />

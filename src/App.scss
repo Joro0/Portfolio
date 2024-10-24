@@ -1,0 +1,25 @@
+/*VARIABLES*/
+$border-color: #ebebeb;
+/*CSS*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root,
+#left-container,
+#right-container,
+#main-container {
+  display: flex;
+}
+
+#left-container,
+#right-container {
+  flex: 1;
+}
+#main-container {
+  flex: 6.5;
+  border-left: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+  height: 100vh;
+}

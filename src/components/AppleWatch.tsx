@@ -26,56 +26,32 @@ export function AppleWatch(props: JSX.IntrinsicElements["group"]) {
   return (
     <group {...props} dispose={null}>
       {/* Wheel Tool */}
-      <mesh
-        geometry={nodes.Solid1.geometry}
-        material={materials.Default5}
-        scale={0.01}
-      >
+      <mesh geometry={nodes.Solid1.geometry} material={materials.Default5}>
         <Edges linewidth={1} threshold={15} color={"black"} />
       </mesh>
 
       {/* Screen */}
-      <mesh
-        geometry={nodes.Solid2.geometry}
-        material={materials.M252525}
-        scale={0.01}
-      >
+      <mesh geometry={nodes.Solid2.geometry} material={materials.M252525}>
         <Edges linewidth={1} threshold={15} color={"gray"} />
       </mesh>
 
       {/* Back Screen */}
-      <mesh
-        geometry={nodes.Solid3.geometry}
-        material={materials.M444444}
-        scale={0.01}
-      >
+      <mesh geometry={nodes.Solid3.geometry} material={materials.M444444}>
         <Edges linewidth={1} threshold={15} color={"gray"} />
       </mesh>
 
       {/* Chasis Screen */}
-      <mesh
-        geometry={nodes.Solid4.geometry}
-        material={materials.Default5}
-        scale={0.01}
-      >
+      <mesh geometry={nodes.Solid4.geometry} material={materials.Default5}>
         <Edges linewidth={2} threshold={15} color={"black"} />
       </mesh>
 
       {/* Bottom Belt */}
-      <mesh
-        geometry={nodes.Solid5.geometry}
-        material={materials.Default3}
-        scale={0.01}
-      >
+      <mesh geometry={nodes.Solid5.geometry} material={materials.Default3}>
         <Edges linewidth={2} threshold={15} color={"black"} />
       </mesh>
 
       {/* Upper Belt */}
-      <mesh
-        geometry={nodes.Solid6.geometry}
-        material={materials.Default3}
-        scale={0.01}
-      >
+      <mesh geometry={nodes.Solid6.geometry} material={materials.Default3}>
         <Edges linewidth={2} threshold={15} color={"black"} />
       </mesh>
     </group>

@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { Headphone } from "./components/Headphone";
 
 import { Canvas } from "@react-three/fiber";
@@ -8,11 +8,19 @@ import { NintendoSwitch } from "./components/NintendoSwitch";
 
 function App() {
   return (
-    <Canvas>
-      <ambientLight intensity={2} />
-      <OrbitControls />
-      <NintendoSwitch />
-    </Canvas>
+    <>
+      <div id="left-container"></div>
+      <div id="main-container">
+        <Canvas>
+          <ambientLight intensity={2} />
+          <OrbitControls />
+          <AppleWatch scale={0.5} position={[5, 0, 0]} />
+          <Headphone scale={0.15} position={[-5, 2, 0]} />
+          <NintendoSwitch scale={0.25} position={[-4, -2, 0]} />
+        </Canvas>
+      </div>
+      <div id="right-container"></div>
+    </>
   );
 }
 

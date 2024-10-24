@@ -23,28 +23,23 @@ export function Headphone(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF("./models/headphone.glb") as GLTFResult;
   return (
     <group {...props} dispose={null}>
-      <group scale={0.01}>
-        {/* Casing (main) */}
-        <mesh
-          geometry={nodes.Solid1_4.geometry}
-          material={materials.M249230230}
-        >
-          <Edges linewidth={2} threshold={15} color={"black"} />
-        </mesh>
+      {/* Casing (main) */}
+      <mesh geometry={nodes.Solid1_4.geometry} material={materials.M249230230}>
+        <Edges linewidth={2} threshold={15} color={"black"} />
+      </mesh>
 
-        {/* Top Padding */}
-        <mesh geometry={nodes.Solid1_3.geometry} material={materials.M656464}>
-          <Edges linewidth={1} threshold={13} color={"white"} />
-        </mesh>
+      {/* Top Padding */}
+      <mesh geometry={nodes.Solid1_3.geometry} material={materials.M656464}>
+        <Edges linewidth={1} threshold={13} color={"white"} />
+      </mesh>
 
-        {/* Volumen Wheel and Inputs */}
-        <mesh geometry={nodes.Solid1_2.geometry} material={materials.M757566}>
-          <Edges linewidth={1} threshold={15} color={"white"} />
-        </mesh>
-        <mesh geometry={nodes.Solid1_5.geometry} material={materials.M000}>
-          <Edges linewidth={1} threshold={15} color={"white"} />
-        </mesh>
-      </group>
+      {/* Volumen Wheel and Inputs */}
+      <mesh geometry={nodes.Solid1_2.geometry} material={materials.M757566}>
+        <Edges linewidth={1} threshold={15} color={"white"} />
+      </mesh>
+      <mesh geometry={nodes.Solid1_5.geometry} material={materials.M000}>
+        <Edges linewidth={1} threshold={15} color={"white"} />
+      </mesh>
     </group>
   );
 }
