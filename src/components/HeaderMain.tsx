@@ -8,7 +8,12 @@ const HeaderMain = () => {
           <div className="logo-description">Software Designer</div>
         </div>
       </div>
-      <div>links</div>
+      <div className="nav-bar">
+        <a href="#">Work</a>
+        <a href="#">About</a>
+        <a href="#">CV</a>
+        <a href="#">LinkedIn</a>
+      </div>
     </header>
   );
 };

@@ -36,12 +36,23 @@ $border-color: #ebebeb;
     justify-content: space-between;
 
     .logo-block {
+      margin-left: 30px;
       display: flex;
       align-items: center;
       flex-direction: row;
       overflow: visible;
       flex-wrap: nowrap;
       gap: 10px;
+    }
+
+    .nav-bar {
+      margin-right: 30px;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      overflow: visible;
+      flex-wrap: nowrap;
+      gap: 40px;
     }
   }
 }
