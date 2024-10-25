@@ -1,5 +1,4 @@
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
 import { AppleWatch } from "./AppleWatch";
 import { Headphone } from "./Headphone";
 import { NintendoSwitch } from "./NintendoSwitch";
@@ -14,17 +13,20 @@ const CanvasModels = () => {
     <div style={localStyle}>
       <Canvas>
         <ambientLight intensity={2} />
-        <OrbitControls />
-        <AppleWatch scale={0.5} position={[3, 0, 0]} rotation={[0, 0, 0]} />
         <Headphone
-          scale={0.15}
-          position={[-2.5, 2, 0]}
-          rotation={[-Math.PI / 3, 0, Math.PI / 3]}
+          scale={0.18}
+          position={[-3.5, 1.6, 0]}
+          rotation={[-Math.PI / 2.8, Math.PI / 20, Math.PI / 2.5]}
         />
         <NintendoSwitch
-          scale={0.25}
-          position={[-2, -2, 0]}
-          rotation={[0, 0, 0]}
+          scale={0.22}
+          position={[3, 0.5, 0]}
+          rotation={[-Math.PI / 6, -Math.PI / 4, -Math.PI / 1.4]}
+        />
+        <AppleWatch
+          scale={0.32}
+          position={[-1.5, -1.5, 0]}
+          rotation={[-Math.PI / 3, Math.PI / 3.5, Math.PI / 4]}
         />
       </Canvas>
     </div>
