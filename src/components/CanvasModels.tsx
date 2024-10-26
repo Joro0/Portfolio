@@ -3,15 +3,11 @@ import { AppleWatch } from "./AppleWatch";
 import { Headphone } from "./Headphone";
 import { NintendoSwitch } from "./NintendoSwitch";
 
-type Props = {
-  id: string;
-};
-
-const CanvasModels = ({ id }: Props) => {
+const CanvasModels = () => {
   const fullScreenHeight = window.innerHeight - 64; //64px from header
 
   return (
-    <div id={id}>
+    <div className="intro-canvas-container">
       <Canvas style={{ width: "100%", height: fullScreenHeight }}>
         <ambientLight intensity={2} />
         <Headphone

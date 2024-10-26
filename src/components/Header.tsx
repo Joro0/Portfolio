@@ -1,4 +1,4 @@
-const HeaderMain = () => {
+const Header = () => {
   return (
     <header id="header">
       <div className="logo-block">
@@ -18,4 +18,4 @@ const HeaderMain = () => {
   );
 };
 
-export default HeaderMain;
+export default Header;
