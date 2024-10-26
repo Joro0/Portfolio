@@ -1,7 +1,6 @@
 const IntroText = () => {
-  const fullScreenHeight = window.innerHeight - 65; //64px from header
   return (
-    <div className="intro-text-container" style={{ height: fullScreenHeight }}>
+    <div className="intro-text-container">
       <div className="slogan-container">
         <h1>Crafting your ideas</h1>
         <h1>Designing your stories</h1>

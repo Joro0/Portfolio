@@ -23,14 +23,14 @@ $border-color: #ebebeb;
   flex-direction: column;
   max-width: 1230px;
   width: 100%;
+
   #header {
-    /*CAMBIOS:
-      1. display -> absolute
-      2. all flex props -> new child div*/
+    max-width: 1230px;
     width: 100%;
     height: 64px;
     border-bottom: 1px solid $border-color;
     display: flex;
+    position: absolute;
     align-items: center;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -78,6 +78,7 @@ $border-color: #ebebeb;
       align-items: center;
       justify-content: center;
       width: 100%;
+      height: 100vh;
       .slogan-container {
         display: flex;
         flex-direction: column;

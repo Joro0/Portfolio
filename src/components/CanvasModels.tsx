@@ -4,11 +4,9 @@ import { Headphone } from "./Headphone";
 import { NintendoSwitch } from "./NintendoSwitch";
 
 const CanvasModels = () => {
-  const fullScreenHeight = window.innerHeight - 64; //64px from header
-
   return (
     <div className="intro-canvas-container">
-      <Canvas style={{ width: "100%", height: fullScreenHeight }}>
+      <Canvas style={{ width: "100%", height: "100%" }}>
         <ambientLight intensity={2} />
         <Headphone
           scale={0.18}
@@ -17,7 +15,7 @@ const CanvasModels = () => {
         />
         <NintendoSwitch
           scale={0.22}
-          position={[3, 0.5, 0]}
+          position={[2.7, 0.5, 0]}
           rotation={[-Math.PI / 6, -Math.PI / 4, -Math.PI / 1.4]}
         />
         <AppleWatch
