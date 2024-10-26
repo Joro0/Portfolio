@@ -5,12 +5,12 @@ import HeaderMain from "./components/HeaderMain";
 function App() {
   return (
     <>
-      <div id="left-container"></div>
       <div id="main-container">
         <HeaderMain />
-        <CanvasModels />
+        <section style={{ display: "fixed", width: "100%", height: "2000px" }}>
+          <CanvasModels id="canvas-container" />
+        </section>
       </div>
-      <div id="right-container"></div>
     </>
   );
 }
