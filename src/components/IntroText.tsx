@@ -6,7 +6,7 @@ const IntroText = () => {
         <h1>Designing your stories</h1>
       </div>
 
-      <p style={{ maxWidth: "455px", position: "relative", left: "250px" }}>
+      <p className="presentation-text">
         Hey there! I'm Jose Zuñiga, an independent creative developer. I create
         websites that are intuitive, visually striking, and tailored to achieve
         your objectives.
