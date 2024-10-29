@@ -12,7 +12,6 @@ $border-color: #ebebeb;
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
 }
@@ -24,6 +23,7 @@ $border-color: #ebebeb;
   flex-direction: column;
   max-width: 1230px;
   width: 100%;
+  position: relative;
 
   #header {
     width: 100%;
@@ -97,7 +97,7 @@ $border-color: #ebebeb;
 
   #about-section {
     height: 100vh;
-    width: auto;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -107,11 +107,19 @@ $border-color: #ebebeb;
 
     .about-pattern-container {
       position: absolute;
-      width: 100%;
-      height: 250px;
+      width: 55%;
+      height: 225px;
       z-index: -1;
-      overflow: hidden;
-      left: 0;
+      background-image: repeating-linear-gradient(
+        45deg,
+        #d4d0cc 0,
+        #d4d0cc 3px,
+        transparent 0,
+        transparent 50%
+      );
+      background-size: 20px 20px;
+      background-color: rgba(255, 255, 255, 0);
+      right: 7%;
     }
   }
 
@@ -125,11 +133,11 @@ $border-color: #ebebeb;
 }
 
 h1 {
-  font-size: 75px;
+  font-size: 72px;
 }
 h2 {
-  font-size: 48px;
+  font-size: 42px;
 }
 p {
-  font-size: 20px;
+  font-size: 24px;
 }

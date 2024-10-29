@@ -1,6 +1,6 @@
 const AboutImage = () => {
   return (
-    <div style={{ width: 350 }}>
+    <div style={{ width: "350px" }}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496.19 665.03">
         <g id="background-person">
           <path

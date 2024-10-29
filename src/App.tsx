@@ -9,7 +9,7 @@ import IntroText from "./components/IntroText";
 function App() {
   return (
     <>
-      <div id="main-container" style={{ position: "relative" }}>
+      <div id="main-container">
         <Header />
 
         <section id="intro-section">
@@ -22,6 +22,7 @@ function App() {
           <AboutPattern />
           <AboutImage />
         </section>
+
         <section id="tool-section"></section>
       </div>
     </>
