@@ -125,10 +125,73 @@ $border-color: #ebebeb;
 
   #tool-section {
     height: 100vh;
-    width: auto;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+
+    .tool-wrapper {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      column-gap: 0;
+      row-gap: 0;
+      grid-template-areas:
+        "tool1 tool2 . . ."
+        "tool3 tool4 tool5 . ."
+        ". tool6 tool7 tool9 ."
+        ". . tool8 tool10 tool12"
+        ". . tool14 tool11 tool13";
+
+      @for $i from 1 through 14 {
+        .tool#{$i} {
+          grid-area: tool#{$i};
+          width: 70px;
+          height: auto;
+        }
+        @if $i == 1 or $i == 3 or $i == 6 or $i == 8 {
+          .tool#{$i} {
+            border-left: 1px solid black;
+          }
+        }
+        @if $i == 1 or $i == 2 or $i == 5 or $i == 9 or $i == 12 {
+          .tool#{$i} {
+            border-top: 1px solid black;
+          }
+        }
+        @if $i ==
+          2 or
+          $i ==
+          5 or
+          $i ==
+          9 or
+          $i ==
+          12 or
+          $i ==
+          13 or
+          $i ==
+          7 or
+          $i ==
+          8 or
+          $i ==
+          10 or
+          $i ==
+          11 or
+          $i ==
+          14
+        {
+          .tool#{$i} {
+            border-right: 1px solid black;
+          }
+        }
+        @if $i == 3 or $i == 6 or $i == 8 or $i == 11 or $i == 13 {
+          .tool#{$i} {
+            border-bottom: 1px solid black;
+          }
+        }
+      }
+    }
   }
 }
 

@@ -2,9 +2,10 @@ import "./App.scss";
 import AboutImage from "./components/AboutImage";
 import AboutPattern from "./components/AboutPattern";
 import AboutText from "./components/AboutText";
-import CanvasModels from "./components/CanvasModels";
+import IntroCanvas from "./components/CanvasModels";
 import Header from "./components/Header";
 import IntroText from "./components/IntroText";
+import ToolGrid from "./components/ToolGrid";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <Header />
 
         <section id="intro-section">
-          <CanvasModels />
+          <IntroCanvas />
           <IntroText />
         </section>
 
@@ -23,7 +24,9 @@ function App() {
           <AboutImage />
         </section>
 
-        <section id="tool-section"></section>
+        <section id="tool-section">
+          <ToolGrid />
+        </section>
       </div>
     </>
   );

@@ -3,7 +3,7 @@ import { AppleWatch } from "./AppleWatch";
 import { Headphone } from "./Headphone";
 import { NintendoSwitch } from "./NintendoSwitch";
 
-const CanvasModels = () => {
+const IntroCanvas = () => {
   return (
     <div className="intro-canvas-container">
       <Canvas style={{ width: "100%", height: "100%" }}>
@@ -28,4 +28,4 @@ const CanvasModels = () => {
   );
 };
 
-export default CanvasModels;
+export default IntroCanvas;
