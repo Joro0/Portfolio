@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <header id="header">
+    <>
       <div className="logo-block">
         <img src="./images/logo.png" alt="Logo" style={{ width: "36px" }} />
         <div className="logo-text">
@@ -14,7 +14,7 @@ const Header = () => {
         <a href="#">CV</a>
         <a href="#">LinkedIn</a>
       </div>
-    </header>
+    </>
   );
 };
 

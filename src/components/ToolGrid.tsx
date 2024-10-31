@@ -1,11 +1,9 @@
 import ToolSvg from "./ToolSvg";
 
 const ToolGrid = () => {
-  {
-    /* IDEA: i create a component that contain all svgs, and depending of the prop, it return the svg wanted */
-  }
+  //Opt: can make a map of an arr of svgIds to create all div tools.
   return (
-    <div className="tool-wrapper">
+    <div className="tool-grid">
       <div className="tool1">
         <ToolSvg svg="javascript" />
       </div>
@@ -45,7 +43,18 @@ const ToolGrid = () => {
       <div className="tool13">
         <ToolSvg svg="illustrator" />
       </div>
-      <div className="tool14"></div>
+      <div className="title1">
+        <p className="p-tool">FRONT-END</p>
+      </div>
+      <div className="title2">
+        <p className="p-tool">3D</p>
+      </div>
+      <div className="title3">
+        <p className="p-tool">DESIGN</p>
+      </div>
+      <div className="aux1"></div>
+      <div className="aux2"></div>
+      <div className="aux3"></div>
     </div>
   );
 };

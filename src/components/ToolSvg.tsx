@@ -3,9 +3,10 @@ interface Props {
 }
 
 const ToolSvg = ({ svg }: Props) => {
+  //svgIcons
   const svgJs = (
     <svg
-      width="80%"
+      width="100%"
       viewBox="0 0 256 256"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -347,7 +348,7 @@ const ToolSvg = ({ svg }: Props) => {
       return (
         <>
           {icon.iconSvg}
-          <p style={{ fontSize: "12px" }}>{icon.iconName}</p>
+          <p>{icon.iconName}</p>
         </>
       );
   }
