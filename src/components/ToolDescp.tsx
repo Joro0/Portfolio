@@ -1,4 +1,10 @@
+import { OrbitControls } from "@react-three/drei";
+import { ForestHouse } from "./ForestHouse";
+import { Canvas } from "@react-three/fiber";
+
 const ToolDescp = () => {
+  const canvasSquareSize = 300;
+
   return (
     <div
       style={{
@@ -9,8 +15,17 @@ const ToolDescp = () => {
       }}
     >
       <h2>Tools</h2>
-      <div style={{ height: 224, width: 224, backgroundColor: "lightgray" }}>
-        Image
+      <div
+        style={{
+          height: canvasSquareSize,
+          width: canvasSquareSize,
+          backgroundColor: "white",
+        }}
+      >
+        <Canvas style={{ width: "100%", height: "100%" }}>
+          <OrbitControls />
+          <ForestHouse scale={1.05} position={[0, -0.1, 0]} />
+        </Canvas>
       </div>
     </div>
   );

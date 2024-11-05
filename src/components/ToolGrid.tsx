@@ -50,7 +50,7 @@ const ToolGrid = () => {
         <p className="p-tool">3D</p>
       </div>
       <div className="title3">
-        <p className="p-tool">DESIGN</p>
+        <p className="p-tool">2D</p>
       </div>
       <div className="aux1"></div>
       <div className="aux2"></div>
