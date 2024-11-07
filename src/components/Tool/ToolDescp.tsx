@@ -1,7 +1,7 @@
 import { OrbitControls } from "@react-three/drei";
 import { ForestHouse } from "./ForestHouse";
 import { Canvas } from "@react-three/fiber";
-import ToolAnimation from "../assets/ToolAnimation.json";
+import ToolAnimation from "../../assets/ToolAnimation.json";
 import Lottie from "lottie-react";
 
 const ToolDescp = () => {

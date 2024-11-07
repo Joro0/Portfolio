@@ -1,40 +1,19 @@
 import "./App.scss";
-import AboutImage from "./components/AboutImage";
-import AboutPattern from "./components/AboutPattern";
-import AboutText from "./components/AboutText";
-import IntroCanvas from "./components/IntroCanvas";
-import Header from "./components/Header";
-import IntroText from "./components/IntroText";
-import ToolDescp from "./components/ToolDescp";
-import ToolGrid from "./components/ToolGrid";
+import Header from "./components/Header/Header";
+import Craft from "./components/Craft/Craft";
+import Intro from "./components/Intro/Intro";
+import About from "./components/About/About";
+import Tool from "./components/Tool/Tool";
 
 function App() {
   return (
     <>
       <div id="main-container">
-        <header id="header">
-          <Header />
-        </header>
-
-        <section id="intro-section">
-          <IntroCanvas />
-          <IntroText />
-        </section>
-
-        <section id="about-section">
-          <AboutText />
-          <AboutPattern />
-          <AboutImage />
-        </section>
-
-        <section id="tool-section">
-          <div className="tool-wrapper">
-            <ToolGrid />
-            <ToolDescp />
-          </div>
-        </section>
-
-        <section id="craft-section"></section>
+        <Header id="header" />
+        <Intro id="intro-section" />
+        <About id="about-section" />
+        <Tool id="tool-section" />
+        <Craft id="craft-section" />
         <section id="footer"></section>
       </div>
     </>

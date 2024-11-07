@@ -1,0 +1,137 @@
+#tool-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 150px;
+
+  .tool-wrapper {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    column-gap: 0;
+    row-gap: 0;
+    grid-template-areas:
+      "tool1 tool2 title1 . ."
+      "tool3 tool4 tool5 title2 ."
+      "aux1 tool6 tool7 tool9 title3"
+      ". aux2 tool8 tool10 tool12"
+      ". . aux3 tool11 tool13";
+
+    div {
+      width: 110px;
+      height: 110px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 8px;
+    }
+    .p-tool {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    @for $i from 1 through 14 {
+      .tool#{$i} {
+        grid-area: tool#{$i};
+        p {
+          font-size: 12px;
+        }
+        svg {
+          width: 60%;
+        }
+      }
+      @if $i ==
+        1 or
+        $i ==
+        3 or
+        $i ==
+        9 or
+        $i ==
+        10 or
+        $i ==
+        11 or
+        $i ==
+        12 or
+        $i ==
+        13
+      {
+        .tool#{$i} {
+          border-left: 2px solid black;
+        }
+      }
+      @if $i == 1 or $i == 2 or $i == 9 or $i == 12 {
+        .tool#{$i} {
+          border-top: 2px solid black;
+        }
+      }
+      @if $i
+        ==2 or
+        $i ==
+        5 or
+        $i ==
+        7 or
+        $i ==
+        8 or
+        $i ==
+        9 or
+        $i ==
+        12 or
+        $i ==
+        13 or
+        $i ==
+        10 or
+        $i ==
+        11 or
+        $i ==
+        14
+      {
+        .tool#{$i} {
+          border-right: 2px solid black;
+        }
+      }
+      @if $i == 3 or $i == 6 or $i == 8 or $i == 11 or $i == 13 {
+        .tool#{$i} {
+          border-bottom: 2px solid black;
+        }
+      }
+      /*adjusting cell*/
+      @if $i == 9 or $i == 10 or $i == 11 or $i == 12 or $i == 13 {
+        .tool#{$i} {
+          position: relative;
+          right: 1px;
+        }
+      }
+      @if $i == 12 or $i == 13 {
+        .tool#{$i} {
+          position: relative;
+          right: 2px;
+        }
+      }
+    }
+    @for $i from 1 through 3 {
+      .title#{$i} {
+        grid-area: title#{$i};
+        justify-content: flex-end;
+        @if $i == 1 {
+          border-bottom: 2px solid black;
+        }
+      }
+      .aux#{$i} {
+        grid-area: aux#{$i};
+        border-right: 2px solid black;
+      }
+    }
+  }
+}

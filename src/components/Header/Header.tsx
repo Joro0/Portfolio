@@ -1,6 +1,12 @@
-const Header = () => {
+import "./Header.scss";
+
+interface Props {
+  id: string;
+}
+
+const Header = ({ id }: Props) => {
   return (
-    <>
+    <section id={id}>
       <div className="logo-block">
         <img src="./images/logo.png" alt="Logo" style={{ width: "36px" }} />
         <div className="logo-text">
@@ -14,7 +20,7 @@ const Header = () => {
         <a href="#">CV</a>
         <a href="#">LinkedIn</a>
       </div>
-    </>
+    </section>
   );
 };
 

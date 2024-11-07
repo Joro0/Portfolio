@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
-import { AppleWatch } from "./AppleWatch";
 import { Headphone } from "./Headphone";
 import { NintendoSwitch } from "./NintendoSwitch";
+import { AppleWatch } from "./AppleWatch";
 
 const IntroCanvas = () => {
   return (
