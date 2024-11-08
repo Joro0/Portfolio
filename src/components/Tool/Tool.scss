@@ -41,12 +41,14 @@
     .p-tool {
       font-size: 18px;
       font-weight: bold;
+      margin: 0;
     }
     @for $i from 1 through 14 {
       .tool#{$i} {
         grid-area: tool#{$i};
         p {
           font-size: 12px;
+          margin: 0;
         }
         svg {
           width: 60%;
