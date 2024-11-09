@@ -4,8 +4,8 @@ import Craft from "./components/Craft/Craft";
 import Intro from "./components/Intro/Intro";
 import About from "./components/About/About";
 import Tool from "./components/Tool/Tool";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Import Bootstrap JS
+//import "bootstrap/dist/css/bootstrap.min.css";
+//import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Import Bootstrap JS
 
 function App() {
   return (

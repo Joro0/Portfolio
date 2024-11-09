@@ -1,5 +1,6 @@
 import "./Craft.scss";
 import CraftAccordion from "./CraftAccordion";
+import CraftAccordionB from "./CraftAccordionB";
 import CraftImages from "./CraftImages";
 
 interface Props {
@@ -20,7 +21,7 @@ const Craft = ({ id }: Props) => {
           width: "100%",
         }}
       >
-        <CraftAccordion />
+        <CraftAccordionB />
         <CraftImages />
       </div>
     </section>
