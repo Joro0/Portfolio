@@ -1,107 +1,57 @@
-const CraftAccordion = () => {
+import { useState } from "react";
+
+interface AccordionItem {
+  title: string;
+  text: string;
+}
+
+interface Props {
+  style: {};
+}
+
+const CraftAccordion = ({ style }: Props) => {
+  const [displayAccordion, setDisplayAccordion] = useState<number>(0);
+
+  const accordionData: AccordionItem[] = [
+    {
+      title: "Introduction",
+      text: "This app is a custom-built item checker, designed to save time and simplify the process of matching product codes.",
+    },
+    {
+      title: "Why",
+      text: "The accountant used Excel to manually match thousands of items, making the task tedious and time-consuming.",
+    },
+    {
+      title: "What",
+      text: "The app reads two Excel files, filters out duplicate SKUs, and matches items from the report.",
+    },
+    {
+      title: "How",
+      text: "Built with React and TypeScript, the app uses an Excel library and regular expressions, reducing the task from 10 hours to 5 minutes.",
+    },
+  ];
+
   return (
-    <div
-      className="accordion accordion-flush"
-      id="accordionFlushExample" // Add this ID here for parent reference
-      style={{ width: 350, marginRight: 32 }}
-    >
-      <div className="accordion-item">
-        <h2 className="accordion-header">
+    <div style={style}>
+      {accordionData.map((acc, index) => (
+        <div key={index} className="accordion-item">
           <button
-            className="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#flush-collapseOne"
-            aria-expanded="false"
-            aria-controls="flush-collapseOne"
+            onClick={() => setDisplayAccordion(index)}
+            className="acc-button"
           >
-            Introduction
+            {acc.title}
           </button>
-        </h2>
-        <div
-          id="flush-collapseOne"
-          className="accordion-collapse collapse"
-          data-bs-parent="#accordionFlushExample"
-        >
-          <div className="accordion-body">
-            This app is a custom-built item checker, designed to save time and
-            simplify the process of matching product codes.
+          <div
+            className={`acc-content ${
+              displayAccordion === index ? "open" : ""
+            }`}
+          >
+            <p className="acc-text">{acc.text}</p>
           </div>
         </div>
-      </div>
-      <div className="accordion-item">
-        <h2 className="accordion-header">
-          <button
-            className="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#flush-collapseTwo"
-            aria-expanded="false"
-            aria-controls="flush-collapseTwo"
-          >
-            Why
-          </button>
-        </h2>
-        <div
-          id="flush-collapseTwo"
-          className="accordion-collapse collapse"
-          data-bs-parent="#accordionFlushExample"
-        >
-          <div className="accordion-body">
-            The accountant used Excel to manually match thousands of items,
-            making the task tedious and time-consuming.
-          </div>
-        </div>
-      </div>
-      <div className="accordion-item">
-        <h2 className="accordion-header">
-          <button
-            className="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#flush-collapseThree"
-            aria-expanded="false"
-            aria-controls="flush-collapseThree"
-          >
-            What
-          </button>
-        </h2>
-        <div
-          id="flush-collapseThree"
-          className="accordion-collapse collapse"
-          data-bs-parent="#accordionFlushExample"
-        >
-          <div className="accordion-body">
-            The app reads two Excel files, filters out duplicate SKUs, and
-            matches items from the report.
-          </div>
-        </div>
-      </div>
-      <div className="accordion-item">
-        <h2 className="accordion-header">
-          <button
-            className="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#flush-collapseFour"
-            aria-expanded="false"
-            aria-controls="flush-collapseFour"
-          >
-            How
-          </button>
-        </h2>
-        <div
-          id="flush-collapseFour"
-          className="accordion-collapse collapse"
-          data-bs-parent="#accordionFlushExample"
-        >
-          <div className="accordion-body">
-            Built with React and TypeScript, the app uses an Excel library and
-            regular expressions, reducing the task from 10 hours to 5 minutes.
-          </div>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
+
 export default CraftAccordion;
