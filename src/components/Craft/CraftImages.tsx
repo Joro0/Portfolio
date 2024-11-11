@@ -1,51 +1,25 @@
-const CraftImages = () => {
+interface Props {
+  selectedItem: number;
+}
+
+const CraftImages = ({ selectedItem }: Props) => {
+  const imageDirections: string[] = [
+    "/images/skucheker_zoomed.JPG",
+    "/images/skucheker_entire.JPG",
+    "/images/skucheker_entire2.jpg",
+    "/images/skucheker_entire.JPG",
+  ];
+
   return (
-    <div
-      style={{
-        width: "600px",
-        display: "flex",
-        flexDirection: "row",
-        backgroundColor: "lightgreen",
-        overflow: "hidden",
-        whiteSpace: "nowrap",
-      }}
-    >
-      <div
-        style={{
-          minWidth: "600px",
-          height: "350px",
-          backgroundColor: "lightgrey",
-        }}
-      >
-        Image 1
-      </div>
-      <div
-        style={{
-          minWidth: "600px",
-          height: "350px",
-          backgroundColor: "lightgrey",
-        }}
-      >
-        Image 2
-      </div>
-      <div
-        style={{
-          minWidth: "600px",
-          height: "350px",
-          backgroundColor: "lightgrey",
-        }}
-      >
-        Image 3
-      </div>
-      <div
-        style={{
-          minWidth: "600px",
-          height: "350px",
-          backgroundColor: "lightgrey",
-        }}
-      >
-        Image 4
-      </div>
+    <div className="image-container">
+      {imageDirections.map((image, index) => (
+        <img
+          src={image}
+          alt="craft image"
+          key={index}
+          className={`image-item ${selectedItem === index ? "show" : ""}`}
+        />
+      ))}
     </div>
   );
 };

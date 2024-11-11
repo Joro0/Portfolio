@@ -1,17 +1,14 @@
-import { useState } from "react";
-
 interface AccordionItem {
   title: string;
   text: string;
 }
 
 interface Props {
-  style: {};
+  selectedItem: number;
+  handleSelectedItem: (item: number) => void;
 }
 
-const CraftAccordion = ({ style }: Props) => {
-  const [displayAccordion, setDisplayAccordion] = useState<number>(0);
-
+const CraftAccordion = ({ selectedItem, handleSelectedItem }: Props) => {
   const accordionData: AccordionItem[] = [
     {
       title: "Introduction",
@@ -32,19 +29,17 @@ const CraftAccordion = ({ style }: Props) => {
   ];
 
   return (
-    <div style={style}>
+    <div style={{ width: 280 }}>
       {accordionData.map((acc, index) => (
         <div key={index} className="accordion-item">
           <button
-            onClick={() => setDisplayAccordion(index)}
+            onClick={() => handleSelectedItem(index)}
             className="acc-button"
           >
             {acc.title}
           </button>
           <div
-            className={`acc-content ${
-              displayAccordion === index ? "open" : ""
-            }`}
+            className={`acc-content ${selectedItem === index ? "open" : ""}`}
           >
             <p className="acc-text">{acc.text}</p>
           </div>
