@@ -7,30 +7,34 @@
   justify-content: center;
   padding: 0 70px;
 
-  .accordion-item {
-    width: 100%;
-    margin-bottom: 10px;
+  .accordion-container {
+    width: 280px;
 
-    .acc-button {
-      display: block;
+    .accordion-item {
       width: 100%;
-      cursor: pointer;
-      text-align: left;
-    }
+      margin-bottom: 10px;
 
-    .acc-content {
-      overflow: hidden;
-      max-height: 0; // Start with zero height
-      transition: max-height 0.3s ease, padding 0.3s ease;
-      padding: 0 10px; // Padding transition helps with a smoother effect
-
-      &.open {
-        max-height: 100px; // Adjust based on content, or use `fit-content`
-        padding: 10px 10px; // Add padding when open
+      .acc-button {
+        display: block;
+        width: 100%;
+        cursor: pointer;
+        text-align: left;
       }
 
-      .acc-text {
-        font-size: 16px;
+      .acc-content {
+        overflow: hidden;
+        max-height: 0; // Start with zero height
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        padding: 0 10px; // Padding transition helps with a smoother effect
+
+        &.open {
+          max-height: 100px; // Adjust based on content, or use `fit-content`
+          padding: 10px 10px; // Add padding when open
+        }
+
+        .acc-text {
+          font-size: 16px;
+        }
       }
     }
   }
@@ -41,8 +45,8 @@
     position: relative;
     overflow: hidden;
     .image-item {
-      width: 100%;
-      height: 100%;
+      max-width: 100%;
+      height: auto;
       position: absolute;
       top: 0;
       left: 0;

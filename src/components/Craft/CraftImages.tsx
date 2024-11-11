@@ -1,15 +1,9 @@
 interface Props {
   selectedItem: number;
+  imageDirections: string[];
 }
 
-const CraftImages = ({ selectedItem }: Props) => {
-  const imageDirections: string[] = [
-    "/images/skucheker_zoomed.JPG",
-    "/images/skucheker_entire.JPG",
-    "/images/skucheker_entire2.jpg",
-    "/images/skucheker_entire.JPG",
-  ];
-
+const CraftImages = ({ selectedItem, imageDirections }: Props) => {
   return (
     <div className="image-container">
       {imageDirections.map((image, index) => (

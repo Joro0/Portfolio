@@ -2,7 +2,13 @@ import { useState } from "react";
 import CraftAccordion from "./CraftAccordion";
 import CraftImages from "./CraftImages";
 
-const CraftItem = () => {
+interface Props {
+  title: string;
+  accData: { title: string; text: string }[];
+  imgDir: string[];
+}
+
+const CraftItem = ({ title, accData, imgDir }: Props) => {
   const [selectedItem, setSelectedItem] = useState<number>(0);
   const handleSelectedItem = (item: number) => {
     setSelectedItem(item);
@@ -10,7 +16,7 @@ const CraftItem = () => {
 
   return (
     <div style={{ width: "100%" }}>
-      <h3>CraftTitle</h3>
+      <h3>{title}</h3>
       <div
         style={{
           display: "flex",
@@ -22,8 +28,9 @@ const CraftItem = () => {
         <CraftAccordion
           selectedItem={selectedItem}
           handleSelectedItem={handleSelectedItem}
+          accordionData={accData}
         />
-        <CraftImages selectedItem={selectedItem} />
+        <CraftImages selectedItem={selectedItem} imageDirections={imgDir} />
       </div>
     </div>
   );
