@@ -1,3 +1,6 @@
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 interface Props {
   selectedItem: number;
   handleSelectedItem: (item: number) => void;
@@ -26,6 +29,17 @@ const CraftAccordion = ({
           </div>
         </div>
       ))}
+
+      <div className="label-container">
+        <label className="accordion-label">javascript</label>
+        <label className="accordion-label">html</label>
+        <label className="accordion-label">css</label>
+        <label className="accordion-label">fullstack</label>
+      </div>
+
+      <button className="github-button">
+        <FontAwesomeIcon icon={faGithub} /> View Work
+      </button>
     </div>
   );
 };

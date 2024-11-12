@@ -1,21 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Unbounded:wght@200..900&display=swap");
+
 /*VARIABLES*/
 $border-color: #ebebeb;
+//text variables
+$h1-size: 50px;
+$h2-size: 42px;
+$h3-size: 30px;
+$p-size: 20px;
+$h1-family: "Unbounded", sans-serif;
+$general-family: "Space Grotesk", sans-serif;
 
 /*CSS*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: $general-family;
+  font-style: normal;
+  font-weight: 300;
 }
 
 h1 {
-  font-size: 72px !important;
+  font-size: $h1-size;
+  font-family: $h1-family;
+  font-weight: 600;
+  font-style: normal;
 }
+
 h2 {
-  font-size: 42px !important;
+  font-size: $h2-size;
+  font-weight: 600;
 }
+
+h3 {
+  font-size: $h3-size;
+  font-weight: 600;
+}
+
 p {
-  font-size: 24px;
+  font-size: $p-size;
 }
 
 #root {

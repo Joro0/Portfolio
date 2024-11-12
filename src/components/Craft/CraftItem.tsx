@@ -6,17 +6,43 @@ interface Props {
   title: string;
   accData: { title: string; text: string }[];
   imgDir: string[];
+  position: "right" | "left";
 }
 
-const CraftItem = ({ title, accData, imgDir }: Props) => {
+const CraftItem = ({ title, accData, imgDir, position = "left" }: Props) => {
   const [selectedItem, setSelectedItem] = useState<number>(0);
   const handleSelectedItem = (item: number) => {
     setSelectedItem(item);
   };
 
+  const leftAccordion = (
+    <>
+      <CraftAccordion
+        selectedItem={selectedItem}
+        handleSelectedItem={handleSelectedItem}
+        accordionData={accData}
+      />
+      <CraftImages selectedItem={selectedItem} imageDirections={imgDir} />
+    </>
+  );
+
+  const rightAccordion = (
+    <>
+      <CraftImages selectedItem={selectedItem} imageDirections={imgDir} />
+      <CraftAccordion
+        selectedItem={selectedItem}
+        handleSelectedItem={handleSelectedItem}
+        accordionData={accData}
+      />
+    </>
+  );
+
   return (
-    <div style={{ width: "100%" }}>
-      <h3>{title}</h3>
+    <div className="craft-item">
+      {/* TITLE SHOULD CHANGE WITH POSITION LEFT-RIGHT */}
+      <h3 style={{ textAlign: position === "left" ? "start" : "end" }}>
+        {title}
+      </h3>
       <div
         style={{
           display: "flex",
@@ -25,12 +51,7 @@ const CraftItem = ({ title, accData, imgDir }: Props) => {
           width: "100%",
         }}
       >
-        <CraftAccordion
-          selectedItem={selectedItem}
-          handleSelectedItem={handleSelectedItem}
-          accordionData={accData}
-        />
-        <CraftImages selectedItem={selectedItem} imageDirections={imgDir} />
+        {position === "left" ? leftAccordion : rightAccordion}
       </div>
     </div>
   );

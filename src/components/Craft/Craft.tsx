@@ -24,7 +24,6 @@ const Craft = ({ id }: Props) => {
       text: "Built with JavaScript, Html, Css. The app uses an Excel library and regular expressions, reducing the task from 10 hours to 5 minutes.",
     },
   ];
-
   const imageDirections: string[] = [
     "/images/skucheker_intro.jpg",
     "/images/skucheker_why.jpg",
@@ -39,6 +38,7 @@ const Craft = ({ id }: Props) => {
         title={"Sku Checker"}
         accData={accordionData}
         imgDir={imageDirections}
+        position="left"
       />
     </section>
   );

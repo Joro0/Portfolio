@@ -7,62 +7,94 @@
   justify-content: center;
   padding: 0 70px;
 
-  .accordion-container {
-    width: 280px;
+  .craft-item {
+    width: 100%;
 
-    .accordion-item {
-      width: 100%;
-      margin-bottom: 10px;
+    .accordion-container {
+      width: 280px;
 
-      .acc-button {
-        display: block;
+      .accordion-item {
         width: 100%;
-        cursor: pointer;
-        text-align: left;
+        margin-bottom: 10px;
+
+        .acc-button {
+          display: block;
+          width: 100%;
+          cursor: pointer;
+          text-align: left;
+        }
+
+        .acc-content {
+          overflow: hidden;
+          max-height: 0; // Start with zero height
+          transition: max-height 0.3s ease, padding 0.3s ease;
+          padding: 0 10px; // Padding transition helps with a smoother effect
+
+          &.open {
+            max-height: 100px; // Adjust based on content, or use `fit-content`
+            padding: 10px 10px; // Add padding when open
+          }
+
+          .acc-text {
+            font-size: 16px;
+          }
+        }
       }
 
-      .acc-content {
-        overflow: hidden;
-        max-height: 0; // Start with zero height
-        transition: max-height 0.3s ease, padding 0.3s ease;
-        padding: 0 10px; // Padding transition helps with a smoother effect
+      .label-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        width: 100%;
+        justify-content: center;
 
-        &.open {
-          max-height: 100px; // Adjust based on content, or use `fit-content`
-          padding: 10px 10px; // Add padding when open
+        .accordion-label {
+          font-family: "Heebo", sans-serif;
+          font-size: 13px;
+          letter-spacing: 0.1rem;
+          font-style: normal;
+          text-transform: lowercase;
+          color: #fff;
+          background-color: #aaa7a7;
+          border-radius: 1.25rem;
+          -webkit-border-radius: 1.25rem;
+          -moz-border-radius: 1.25rem;
+          padding: 0.4rem 0.9375rem;
         }
+      }
 
-        .acc-text {
-          font-size: 16px;
-        }
+      .github-button {
+        font-size: 20px;
       }
     }
-  }
 
-  .image-container {
-    width: 750px;
-    height: 365px;
-    position: relative;
-    overflow: hidden;
-    .image-item {
-      max-width: 100%;
-      height: auto;
-      position: absolute;
-      top: 0;
-      left: 0;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      opacity: 0;
-      z-index: 0;
-      transition: opacity 0.5s ease;
+    .image-container {
+      width: 750px;
+      height: 360px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      .image-item {
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        opacity: 0;
+        z-index: 0;
+        transition: opacity 0.5s ease;
 
-      &.show {
-        opacity: 1;
-        z-index: 1;
-      }
-      &:not(.show) {
-        transition: opacity 0.5s ease 0.5s;
+        &.show {
+          opacity: 1;
+          z-index: 1;
+        }
+        &:not(.show) {
+          transition: opacity 0.5s ease 0.5s;
+        }
       }
     }
   }
