@@ -35,22 +35,23 @@ export function Headphone({ mainColor, secondColor, ...props }: Props) {
   return (
     <group {...props} dispose={null}>
       {/* Casing (main) */}
-      <mesh geometry={nodes.Solid1_4.geometry} material={materials.M249230230}>
-        <Edges linewidth={2} threshold={15} color={"black"} />
-      </mesh>
+      <mesh
+        geometry={nodes.Solid1_4.geometry}
+        material={materials.M249230230}
+      ></mesh>
 
       {/* Top Padding */}
-      <mesh geometry={nodes.Solid1_3.geometry} material={materials.M656464}>
-        <Edges linewidth={1} threshold={13} color={"white"} />
-      </mesh>
+      <mesh
+        geometry={nodes.Solid1_3.geometry}
+        material={materials.M656464}
+      ></mesh>
 
       {/* Volumen Wheel and Inputs */}
-      <mesh geometry={nodes.Solid1_2.geometry} material={materials.M757566}>
-        <Edges linewidth={1} threshold={15} color={"white"} />
-      </mesh>
-      <mesh geometry={nodes.Solid1_5.geometry} material={materials.M000}>
-        <Edges linewidth={1} threshold={15} color={"white"} />
-      </mesh>
+      <mesh
+        geometry={nodes.Solid1_2.geometry}
+        material={materials.M757566}
+      ></mesh>
+      <mesh geometry={nodes.Solid1_5.geometry} material={materials.M000}></mesh>
     </group>
   );
 }
