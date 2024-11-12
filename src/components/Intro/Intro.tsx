@@ -9,8 +9,8 @@ interface Props {
 const Intro = ({ id }: Props) => {
   return (
     <section id={id}>
-      <IntroCanvas />
       <IntroText />
+      <IntroCanvas />
     </section>
   );
 };

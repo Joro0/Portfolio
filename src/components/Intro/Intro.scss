@@ -9,12 +9,13 @@
   .intro-canvas-container {
     width: 100%;
     height: 100%;
-    opacity: 0.4;
+    //opacity: 0.4;
     position: absolute;
+    top: 0;
     left: 0;
-    top: 64px;
-    z-index: -1;
+    z-index: 1;
   }
+
   .intro-text-container {
     display: flex;
     flex-direction: column;
@@ -23,6 +24,12 @@
     width: 100%;
     height: 100%;
     row-gap: 32px;
+
+    h1,
+    p {
+      z-index: 2;
+      user-select: none;
+    }
     .slogan-container {
       display: flex;
       flex-direction: column;

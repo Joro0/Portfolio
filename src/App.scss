@@ -2,7 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Unbounded:wght@200..900&display=swap");
 
 /*VARIABLES*/
-$border-color: #ebebeb;
+//Colors
+$background-col: #f0b63a;
+$text-col: #fff;
+$var1: #ae5a55;
+$var2: #583532;
+
 //text variables
 $h1-size: 50px;
 $h2-size: 42px;
@@ -26,20 +31,24 @@ h1 {
   font-family: $h1-family;
   font-weight: 600;
   font-style: normal;
+  color: $text-col;
 }
 
 h2 {
   font-size: $h2-size;
   font-weight: 600;
+  color: $text-col;
 }
 
 h3 {
   font-size: $h3-size;
   font-weight: 600;
+  color: $text-col;
 }
 
 p {
   font-size: $p-size;
+  color: $text-col;
 }
 
 #root {
@@ -48,14 +57,14 @@ p {
   overflow: hidden;
   align-items: center;
   justify-content: center;
+  z-index: -1;
 }
 
 #main-container {
-  border-left: 1px solid $border-color;
-  border-right: 1px solid $border-color;
   display: flex;
   flex-direction: column;
-  max-width: 1230px;
   width: 100%;
   position: relative;
+  background-color: #f0b63a;
+  z-index: 0;
 }

@@ -30,10 +30,33 @@ type GLTFResult = GLTF & {
   };
 };
 
-export function NintendoSwitch(props: JSX.IntrinsicElements["group"]) {
+interface Props extends React.ComponentProps<"group"> {
+  mainColor: string;
+  secondColor: string;
+  thirdColor: string;
+}
+
+export function NintendoSwitch({
+  mainColor,
+  secondColor,
+  thirdColor,
+  ...props
+}: Props) {
   const { nodes, materials } = useGLTF(
     "./models/nintendo_switch.glb"
   ) as GLTFResult;
+
+  materials.M181818.color.set(thirdColor);
+  materials.M6969692.color.set(mainColor);
+  materials.M474747.color.set(thirdColor);
+  materials.M1818181.color.set(thirdColor);
+  materials.M235235235.color.set(thirdColor);
+  materials.M1818182.color.set(thirdColor);
+  materials.M555.color.set(thirdColor);
+  materials.M646464.color.set(thirdColor);
+  materials.M6969691.color.set(secondColor);
+  materials.M696969.color.set(thirdColor);
+
   return (
     <group {...props} dispose={null}>
       {/* Left Control */}

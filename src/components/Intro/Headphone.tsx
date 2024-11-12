@@ -11,7 +11,6 @@ type GLTFResult = GLTF & {
     Solid1_5: THREE.Mesh;
   };
   materials: {
-    M126126134: THREE.MeshStandardMaterial;
     M757566: THREE.MeshStandardMaterial;
     M656464: THREE.MeshStandardMaterial;
     M249230230: THREE.MeshStandardMaterial;
@@ -19,8 +18,20 @@ type GLTFResult = GLTF & {
   };
 };
 
-export function Headphone(props: JSX.IntrinsicElements["group"]) {
+interface Props extends React.ComponentProps<"group"> {
+  mainColor: string;
+  secondColor: string;
+  thirdColor?: string;
+}
+
+export function Headphone({ mainColor, secondColor, ...props }: Props) {
   const { nodes, materials } = useGLTF("./models/headphone.glb") as GLTFResult;
+
+  materials.M249230230.color.set(mainColor);
+  materials.M656464.color.set(secondColor);
+  materials.M757566.color.set(secondColor);
+  materials.M000.color.set(secondColor);
+
   return (
     <group {...props} dispose={null}>
       {/* Casing (main) */}

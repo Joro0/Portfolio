@@ -19,10 +19,22 @@ type GLTFResult = GLTF & {
   };
 };
 
-export function AppleWatch(props: JSX.IntrinsicElements["group"]) {
+interface Props extends React.ComponentProps<"group"> {
+  mainColor: string;
+  secondColor: string;
+  thirdColor?: string;
+}
+
+export function AppleWatch({ mainColor, secondColor, ...props }: Props) {
   const { nodes, materials } = useGLTF(
     "./models/apple_watch.glb"
   ) as GLTFResult;
+
+  materials.Default5.color.set(mainColor);
+  materials.M252525.color.set(secondColor);
+  materials.M444444.color.set(mainColor);
+  materials.Default3.color.set(mainColor);
+
   return (
     <group {...props} dispose={null}>
       {/* Wheel Tool */}
