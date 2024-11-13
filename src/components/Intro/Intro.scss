@@ -1,3 +1,5 @@
+@use "../../styles/variables" as var;
+
 #intro-section {
   display: flex;
   width: 100%;
@@ -5,7 +7,26 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  background-color: #f0b63a;
+  background-color: var.$background-intro;
+
+  h1,
+  p {
+    color: var.$text-color-intro;
+  }
+
+  .intro-logo-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    overflow: visible;
+    flex-wrap: nowrap;
+    gap: 10px;
+    position: absolute;
+    top: 25px;
+    left: 40px;
+    z-index: 2;
+    user-select: none;
+  }
 
   .intro-canvas-container {
     width: 100%;

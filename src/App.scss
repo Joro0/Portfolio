@@ -1,54 +1,37 @@
+@use "./styles/variables" as var;
+
 @import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Unbounded:wght@200..900&display=swap");
-
-/*VARIABLES*/
-//Colors
-$background-intro: #f0b63a;
-$text-col: #fff;
-$var1: #ae5a55;
-$var2: #583532;
-
-//text variables
-$h1-size: 50px;
-$h2-size: 42px;
-$h3-size: 30px;
-$p-size: 20px;
-$h1-family: "Unbounded", sans-serif;
-$general-family: "Space Grotesk", sans-serif;
 
 /*CSS*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: $general-family;
+  font-family: var.$general-family;
   font-style: normal;
   font-weight: 300;
 }
 
 h1 {
-  font-size: $h1-size;
-  font-family: $h1-family;
+  font-size: var.$h1-size;
+  font-family: var.$h1-family;
   font-weight: 600;
   font-style: normal;
-  color: $text-col;
 }
 
 h2 {
-  font-size: $h2-size;
+  font-size: var.$h2-size;
   font-weight: 600;
-  color: $text-col;
 }
 
 h3 {
-  font-size: $h3-size;
+  font-size: var.$h3-size;
   font-weight: 600;
-  color: $text-col;
 }
 
 p {
-  font-size: $p-size;
-  color: $text-col;
+  font-size: var.$p-size;
 }
 
 #root {

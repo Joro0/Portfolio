@@ -1,7 +1,5 @@
 import "./About.scss";
 import AboutImage from "./AboutImage";
-import AboutPattern from "./AboutPattern";
-import AboutText from "./AboutText";
 
 interface Props {
   id: string;
@@ -10,8 +8,17 @@ interface Props {
 const About = ({ id }: Props) => {
   return (
     <section id={id}>
-      <AboutText />
-      <AboutPattern />
+      <div className="about-text">
+        <h2>A bit about me.</h2>
+        <p>
+          I believe in lifelong learning, a philosophy that has shaped my
+          journey as a developer. With a foundation in mechatronic engineering
+          and a natural inclination for creativity, I bring an unique blend of
+          artistic vision and logic. This balance fuels my commitment to
+          creating solutions that are both functional and thoughtfully designed.
+        </p>
+      </div>
+      <div className="about-pattern-container"></div>
       <AboutImage />
     </section>
   );

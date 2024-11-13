@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
-import { Headphone } from "./Headphone";
-import { NintendoSwitch } from "./NintendoSwitch";
-import { AppleWatch } from "./AppleWatch";
+import { CanvasHeadphone } from "./CanvasHeadphone";
+import { CanvasNintendo } from "./CanvasNintendo";
+import { CanvasWatch } from "./CanvasWatch";
 import { OrbitControls } from "@react-three/drei";
 
 const IntroCanvas = () => {
@@ -13,14 +13,14 @@ const IntroCanvas = () => {
         <directionalLight intensity={1} position={[8, -15, 5]} />
         <OrbitControls enableZoom={false} />
 
-        <Headphone
+        <CanvasHeadphone
           mainColor="#f0b63a"
           secondColor="#f3c86c"
           scale={0.18}
           position={[-5.6, 1, 0]}
           rotation={[-Math.PI / 2.8, Math.PI / 15, Math.PI / 2]}
         />
-        <NintendoSwitch
+        <CanvasNintendo
           mainColor="#f0b63a"
           secondColor="#f0b63a"
           thirdColor="#f3c86c"
@@ -28,7 +28,7 @@ const IntroCanvas = () => {
           position={[4.2, 1, 0]}
           rotation={[-Math.PI / 6, -Math.PI / 4, -Math.PI / 1.4]}
         />
-        <AppleWatch
+        <CanvasWatch
           mainColor="#f0b63a"
           secondColor="#f3c86c"
           scale={0.32}

@@ -1,3 +1,5 @@
+@use "../../styles/variables" as var;
+
 #about-section {
   height: 100vh;
   width: 100%;
@@ -5,23 +7,74 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0 150px;
+  padding: 0 300px;
   position: relative;
+  overflow: hidden;
+  background-color: var.$background-about;
+
+  h2,
+  p {
+    color: var.$text-color-about;
+  }
+
+  .about-text {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 2;
+  }
 
   .about-pattern-container {
     position: absolute;
-    width: 55%;
+    width: 47%;
     height: 225px;
-    z-index: -1;
+    z-index: 0;
     background-image: repeating-linear-gradient(
       45deg,
-      #d4d0cc 0,
-      #d4d0cc 3px,
+      var.$about-pattern 0,
+      var.$about-pattern 3px,
       transparent 0,
       transparent 50%
     );
     background-size: 20px 20px;
     background-color: rgba(255, 255, 255, 0);
-    right: 7%;
+    right: 10%;
+  }
+
+  .about-image {
+    width: 350px;
+    z-index: 1;
+
+    #background-person path,
+    #aux-person path {
+      fill: var.$about-person;
+    }
+    #shade-body path,
+    #shade-neck path,
+    #shade-head path,
+    #shade-hair path {
+      fill: var.$about-shade;
+    }
+    #body-path path,
+    #face-bottom path,
+    #nose path,
+    #ears path,
+    #hair path,
+    #mouth path,
+    #eyes path,
+    #mustache path,
+    #beard-chin,
+    #eyebrows path {
+      fill: var.$about-path;
+      stroke: var.$about-path;
+      stroke-width: 1px;
+    }
+    #glasses {
+      fill: none;
+      stroke: var.$about-path;
+      stroke-miterlimit: 10;
+      stroke-width: 3px;
+    }
   }
 }

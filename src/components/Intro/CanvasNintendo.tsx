@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { Edges, useGLTF } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 
 type GLTFResult = GLTF & {
@@ -36,7 +36,7 @@ interface Props extends React.ComponentProps<"group"> {
   thirdColor: string;
 }
 
-export function NintendoSwitch({
+export function CanvasNintendo({
   mainColor,
   secondColor,
   thirdColor,

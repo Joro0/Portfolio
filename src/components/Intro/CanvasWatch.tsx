@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { Edges, useGLTF } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 
 type GLTFResult = GLTF & {
@@ -25,7 +25,7 @@ interface Props extends React.ComponentProps<"group"> {
   thirdColor?: string;
 }
 
-export function AppleWatch({ mainColor, secondColor, ...props }: Props) {
+export function CanvasWatch({ mainColor, secondColor, ...props }: Props) {
   const { nodes, materials } = useGLTF(
     "./models/apple_watch.glb"
   ) as GLTFResult;

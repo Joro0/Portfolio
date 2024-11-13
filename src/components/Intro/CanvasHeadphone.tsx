@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { Edges, useGLTF } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 
 type GLTFResult = GLTF & {
@@ -24,7 +24,7 @@ interface Props extends React.ComponentProps<"group"> {
   thirdColor?: string;
 }
 
-export function Headphone({ mainColor, secondColor, ...props }: Props) {
+export function CanvasHeadphone({ mainColor, secondColor, ...props }: Props) {
   const { nodes, materials } = useGLTF("./models/headphone.glb") as GLTFResult;
 
   materials.M249230230.color.set(mainColor);

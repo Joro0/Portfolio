@@ -40,6 +40,7 @@ const Craft = ({ id }: Props) => {
         imgDir={imageDirections}
         position="left"
       />
+      {/* Playground section */}
     </section>
   );
 };
