@@ -1,50 +1,72 @@
+@use "../../styles/variables" as var;
+
 #tool-section {
   height: 100vh;
   width: 100%;
+  background-color: var.$background-tool;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 0 150px;
+  gap: 100px;
+  position: relative;
 
-  .tool-wrapper {
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: end;
-    width: 100%;
-    justify-content: space-between;
+  h2,
+  p {
+    color: var.$text-color-tool;
+    user-select: none;
+    z-index: 1;
+  }
+
+  .tool-pattern {
+    position: absolute;
+    width: 800px;
+    height: 200px;
+    right: 3%;
+    top: 4%;
+    z-index: 0;
+
+    background-image: radial-gradient(var.$t-pattern 1.5px, transparent 1.5px),
+      radial-gradient(var.$t-pattern 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+    background-position: 0 0, 7px 7px;
+    background-color: rgba(166, 103, 100, 0);
   }
 
   .tool-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    column-gap: 0;
-    row-gap: 0;
+    gap: 2px;
     grid-template-areas:
-      "tool1 tool2 title1 . ."
-      "tool3 tool4 tool5 title2 ."
-      "aux1 tool6 tool7 tool9 title3"
-      ". aux2 tool8 tool10 tool12"
-      ". . aux3 tool11 tool13";
+      "icon-1 icon-2  title1  .        ."
+      "icon-3 icon-4  icon-5  title2   ."
+      ".      icon-6  icon-7  icon-9   title3"
+      ".      .       icon-8  icon-10  icon-12"
+      ".      .       .       icon-11  icon-13";
 
     div {
       width: 110px;
       height: 110px;
       display: flex;
+      position: relative;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      row-gap: 8px;
+      transition: background-color 0.3s ease;
     }
+
     .p-tool {
       font-weight: 600;
       margin: 0;
     }
-    @for $i from 1 through 14 {
-      .tool#{$i} {
-        grid-area: tool#{$i};
+
+    // tool grid (frontend, 3d, 2d)
+    @for $i from 1 through 13 {
+      .icon-#{$i} {
+        grid-area: icon-#{$i};
+        border: 3px solid var.$t-unselected-1;
+        border-radius: 5px;
         p {
           font-size: 12px;
         }
@@ -52,86 +74,164 @@
           width: 60%;
         }
       }
-      @if $i ==
-        1 or
-        $i ==
-        3 or
-        $i ==
-        9 or
-        $i ==
-        10 or
-        $i ==
-        11 or
-        $i ==
-        12 or
-        $i ==
-        13
-      {
-        .tool#{$i} {
-          border-left: 2px solid black;
-        }
-      }
-      @if $i == 1 or $i == 2 or $i == 9 or $i == 12 {
-        .tool#{$i} {
-          border-top: 2px solid black;
-        }
-      }
-      @if $i
-        ==2 or
-        $i ==
-        5 or
-        $i ==
-        7 or
-        $i ==
-        8 or
-        $i ==
-        9 or
-        $i ==
-        12 or
-        $i ==
-        13 or
-        $i ==
-        10 or
-        $i ==
-        11 or
-        $i ==
-        14
-      {
-        .tool#{$i} {
-          border-right: 2px solid black;
-        }
-      }
-      @if $i == 3 or $i == 6 or $i == 8 or $i == 11 or $i == 13 {
-        .tool#{$i} {
-          border-bottom: 2px solid black;
-        }
-      }
-      /*adjusting cell*/
-      @if $i == 9 or $i == 10 or $i == 11 or $i == 12 or $i == 13 {
-        .tool#{$i} {
-          position: relative;
-          right: 1px;
-        }
-      }
-      @if $i == 12 or $i == 13 {
-        .tool#{$i} {
-          position: relative;
-          right: 2px;
-        }
-      }
     }
+
+    // Title grid
     @for $i from 1 through 3 {
       .title#{$i} {
         grid-area: title#{$i};
         justify-content: flex-end;
-        @if $i == 1 {
-          border-bottom: 2px solid black;
-        }
       }
-      .aux#{$i} {
-        grid-area: aux#{$i};
-        border-right: 2px solid black;
-      }
+    }
+  }
+
+  //Icon unselected color
+  .tool-color-1,
+  .tool-color-3,
+  .tool-color-4,
+  .tool-color-5,
+  .tool-color-6 {
+    fill: var.$t-unselected-1;
+    transition: fill 0.3s ease;
+  }
+  .tool-color-stroke {
+    stroke: var.$t-unselected-1;
+  }
+  .tool-color-2 {
+    fill: var.$t-unselected-2;
+  }
+
+  //Tool zone color
+  .grid-selected {
+    background-color: var.$t-selected;
+  }
+
+  //Icon hover color
+  .icon-1:hover,
+  .icon-1.grid-selected {
+    background-color: var.$t-selected;
+    .tool-color-1 {
+      fill: var.$t-javascript-1;
+    }
+    .tool-color-2 {
+      fill: var.$t-javascript-2;
+    }
+  }
+  .icon-2:hover,
+  .icon-2.grid-selected {
+    .tool-color-1 {
+      fill: var.$t-typescript-1;
+    }
+    .tool-color-2 {
+      fill: var.$t-typescript-2;
+    }
+  }
+  .icon-3:hover,
+  .icon-3.grid-selected {
+    .tool-color-1 {
+      fill: var.$t-react-1;
+    }
+  }
+  .icon-4:hover,
+  .icon-4.grid-selected {
+    .tool-color-1 {
+      fill: var.$t-angular-1;
+    }
+    .tool-color-2 {
+      fill: var.$t-angular-3;
+    }
+    .tool-color-3 {
+      fill: var.$t-angular-2;
+    }
+  }
+  .icon-5:hover,
+  .icon-5.grid-selected {
+    .tool-color-1 {
+      fill: var.$t-next-1;
+    }
+  }
+  .icon-6:hover,
+  .icon-6.grid-selected {
+    .tool-color-1 {
+      fill: var.$t-git-1;
+    }
+    .tool-color-2 {
+      fill: var.$t-git-2;
+    }
+  }
+  .icon-7:hover,
+  .icon-7.grid-selected {
+    .tool-color-1 {
+      fill: var.$t-redux-1;
+    }
+  }
+  .icon-8:hover,
+  .icon-8.grid-selected {
+    .tool-color-1 {
+      fill: var.$t-sass-1;
+    }
+    .tool-color-2 {
+      fill: var.$t-sass-2;
+    }
+  }
+  .icon-9:hover,
+  .icon-9.grid-selected {
+    .tool-color-stroke {
+      stroke: var.$t-three-1;
+    }
+  }
+  .icon-10:hover,
+  .icon-10.grid-selected {
+    .tool-color-1 {
+      fill: var.$t-fusion-1;
+    }
+    .tool-color-2 {
+      fill: var.$t-fusion-2;
+    }
+    .tool-color-3 {
+      fill: var.$t-fusion-3;
+    }
+    .tool-color-4 {
+      fill: var.$t-fusion-4;
+    }
+  }
+  .icon-11:hover,
+  .icon-11.grid-selected {
+    .tool-color-1 {
+      fill: var.$t-blender-1;
+    }
+    .tool-color-2 {
+      fill: var.$t-blender-2;
+    }
+    .tool-color-3 {
+      fill: var.$t-blender-3;
+    }
+  }
+  .icon-12:hover,
+  .icon-12.grid-selected {
+    .tool-color-1 {
+      fill: var.$t-figma-1;
+    }
+    .tool-color-3 {
+      fill: var.$t-figma-2;
+    }
+    .tool-color-4 {
+      fill: var.$t-figma-3;
+    }
+    .tool-color-5 {
+      fill: var.$t-figma-4;
+    }
+    .tool-color-6 {
+      fill: var.$t-figma-5;
+    }
+  }
+  .icon-13:hover,
+  .icon-13.grid-selected {
+    .tool-color-1 {
+      fill: var.$t-illustrator-1;
+    }
+    .tool-color-2 {
+      fill: var.$t-illustrator-2;
     }
   }
 }

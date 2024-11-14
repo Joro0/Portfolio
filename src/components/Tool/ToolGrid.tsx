@@ -1,48 +1,65 @@
 import ToolSvg from "./ToolSvg";
+import { useState } from "react";
 
 const ToolGrid = () => {
-  //Opt: can make a map of an arr of svgIds to create all div tools.
+  const frontEndList = [
+    "javascript",
+    "typescript",
+    "react",
+    "angular",
+    "next",
+    "git",
+    "redux",
+    "sass",
+  ];
+  const threeDList = ["three", "fusion", "blender"];
+
+  const twoDList = ["figma", "illustrator"];
+
+  const [clickedZone, setClickedZone] = useState<number | null>(0);
+
   return (
     <div className="tool-grid">
-      <div className="tool1">
-        <ToolSvg svg="javascript" />
-      </div>
-      <div className="tool2">
-        <ToolSvg svg="typescript" />
-      </div>
-      <div className="tool3">
-        <ToolSvg svg="react" />
-      </div>
-      <div className="tool4">
-        <ToolSvg svg="angular" />
-      </div>
-      <div className="tool5">
-        <ToolSvg svg="next" />
-      </div>
-      <div className="tool6">
-        <ToolSvg svg="git" />
-      </div>
-      <div className="tool7">
-        <ToolSvg svg="redux" />
-      </div>
-      <div className="tool8">
-        <ToolSvg svg="sass" />
-      </div>
-      <div className="tool9">
-        <ToolSvg svg="three" />
-      </div>
-      <div className="tool10">
-        <ToolSvg svg="fusion" />
-      </div>
-      <div className="tool11">
-        <ToolSvg svg="blender" />
-      </div>
-      <div className="tool12">
-        <ToolSvg svg="figma" />
-      </div>
-      <div className="tool13">
-        <ToolSvg svg="illustrator" />
-      </div>
+      {/* frontend grid */}
+      {frontEndList.map((icon, index) => (
+        <div
+          className={`icon-${index + 1} ${
+            clickedZone === 1 ? "grid-selected" : ""
+          }`}
+          onClick={() => {
+            setClickedZone(1);
+          }}
+        >
+          <ToolSvg svg={icon} />
+        </div>
+      ))}
+      {/* 3d grid */}
+      {threeDList.map((icon, index) => (
+        <div
+          className={`icon-${index + 9} ${
+            clickedZone === 2 ? "grid-selected" : ""
+          }`}
+          onClick={() => {
+            setClickedZone(2);
+          }}
+        >
+          <ToolSvg svg={icon} />
+        </div>
+      ))}
+      {/* 2d grid */}
+      {twoDList.map((icon, index) => (
+        <div
+          className={`icon-${index + 12} ${
+            clickedZone === 3 ? "grid-selected" : ""
+          }`}
+          onClick={() => {
+            setClickedZone(3);
+          }}
+        >
+          <ToolSvg svg={icon} />
+        </div>
+      ))}
+
       <div className="title1">
         <p className="p-tool">FRONT-END</p>
       </div>
@@ -52,9 +69,6 @@ const ToolGrid = () => {
       <div className="title3">
         <p className="p-tool">2D</p>
       </div>
-      <div className="aux1"></div>
-      <div className="aux2"></div>
-      <div className="aux3"></div>
     </div>
   );
 };

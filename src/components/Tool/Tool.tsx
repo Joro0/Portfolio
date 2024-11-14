@@ -9,10 +9,9 @@ interface Props {
 const Tool = ({ id }: Props) => {
   return (
     <section id={id}>
-      <div className="tool-wrapper">
-        <ToolGrid />
-        <ToolDescp />
-      </div>
+      <div className="tool-pattern"></div>
+      <ToolGrid />
+      <ToolDescp />
     </section>
   );
 };

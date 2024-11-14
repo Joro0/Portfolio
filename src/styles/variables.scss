@@ -1,20 +1,53 @@
 // Colors
 $background-intro: #f0b63a;
 $background-about: #edeceb;
-$background-tool: #ae5a55;
+$background-tool: #b54a48;
 
 $text-color-intro: #fff;
 $text-color-about: #937024;
-$text-color-tool: #583532;
+$text-color-tool: #edeceb;
 
-$var1: #ae5a55;
-$var2: #583532;
-
-// About SVG Colors
+// About Colors
 $about-person: #edeceb;
 $about-shade: #f0b63a;
 $about-path: #f07a3a;
 $about-pattern: #ebd6a9;
+
+//Tool Colors
+$t-unselected-1: #551d17;
+$t-unselected-2: #b54a48;
+$t-selected: #551d1759;
+$t-pattern: #551d1759;
+//icon real colors
+$t-javascript-1: #f7df1e;
+$t-javascript-2: white;
+$t-typescript-1: #007acc;
+$t-typescript-2: black;
+$t-react-1: #00d8ff;
+$t-angular-1: #dd0031;
+$t-angular-2: #c3002f;
+$t-angular-3: white;
+$t-next-1: black;
+$t-git-1: #ee513b;
+$t-git-2: white;
+$t-redux-1: #764abc;
+$t-sass-1: #c69;
+$t-sass-2: white;
+$t-three-1: black;
+$t-fusion-1: #ff6b00;
+$t-fusion-2: white;
+$t-fusion-3: #ff9548;
+$t-fusion-4: #933c00;
+$t-blender-1: #ea7600;
+$t-blender-2: #ffffff;
+$t-blender-3: #265787;
+$t-figma-1: #1abcfe;
+$t-figma-2: #0acf83;
+$t-figma-3: #ff7262;
+$t-figma-4: #f24e1e;
+$t-figma-5: #a259ff;
+$t-illustrator-1: #330000;
+$t-illustrator-2: #ff9a00;
 
 // Fonts
 $h1-size: 50px;
