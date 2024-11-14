@@ -1,5 +1,8 @@
 @use "../../styles/variables" as var;
 
+$size-grid: 110px;
+$size-grid-img: 330px;
+
 #tool-section {
   height: 100vh;
   width: 100%;
@@ -39,15 +42,14 @@
     grid-template-rows: repeat(5, 1fr);
     gap: 2px;
     grid-template-areas:
-      "icon-1 icon-2  title1  .        ."
-      "icon-3 icon-4  icon-5  title2   ."
-      ".      icon-6  icon-7  icon-9   title3"
-      ".      .       icon-8  icon-10  icon-12"
-      ".      .       .       icon-11  icon-13";
+      "icon-1 icon-2  title-1  .        .        . .          .           ."
+      "icon-3 icon-4  icon-5  title-2   .        . title-tool title-tool  title-tool"
+      ".      icon-6  icon-7  icon-9   title-3   . img-tool   img-tool    img-tool"
+      ".      .       icon-8  icon-10  icon-12  . img-tool    img-tool    img-tool"
+      ".      .       .       icon-11  icon-13  . img-tool    img-tool    img-tool";
+    grid-template-columns: auto auto auto auto auto 50px auto auto auto;
 
     div {
-      width: 110px;
-      height: 110px;
       display: flex;
       position: relative;
       flex-direction: column;
@@ -56,16 +58,13 @@
       transition: background-color 0.3s ease;
     }
 
-    .p-tool {
-      font-weight: 600;
-      margin: 0;
-    }
-
-    // tool grid (frontend, 3d, 2d)
+    // Tool grid (frontend, 3d, 2d)
     @for $i from 1 through 13 {
       .icon-#{$i} {
+        width: $size-grid;
+        height: $size-grid;
         grid-area: icon-#{$i};
-        border: 3px solid var.$t-unselected-1;
+        border: 3px solid var.$t-grid-border;
         border-radius: 5px;
         p {
           font-size: 12px;
@@ -78,10 +77,33 @@
 
     // Title grid
     @for $i from 1 through 3 {
-      .title#{$i} {
-        grid-area: title#{$i};
+      .title-#{$i} {
+        grid-area: title-#{$i};
         justify-content: flex-end;
+        width: $size-grid;
+        height: $size-grid;
+        .title-grid {
+          font-weight: 600;
+          margin: 0;
+        }
       }
+    }
+    // Title section grid
+    .title-tool {
+      grid-area: title-tool;
+      h2 {
+        width: 100%;
+        text-align: right;
+      }
+    }
+    // Img grid
+    .img-tool {
+      grid-area: img-tool;
+      width: $size-grid-img;
+      height: $size-grid-img;
+      border: 3px solid var.$t-grid-border;
+      border-radius: 20px;
+      background-color: var.$t-grid-selected;
     }
   }
 
@@ -91,25 +113,25 @@
   .tool-color-4,
   .tool-color-5,
   .tool-color-6 {
-    fill: var.$t-unselected-1;
+    fill: var.$t-grid-border;
     transition: fill 0.3s ease;
   }
   .tool-color-stroke {
-    stroke: var.$t-unselected-1;
+    stroke: var.$t-grid-border;
   }
   .tool-color-2 {
-    fill: var.$t-unselected-2;
+    fill: var.$t-grid-back;
   }
 
   //Tool zone color
   .grid-selected {
-    background-color: var.$t-selected;
+    background-color: var.$t-grid-selected;
   }
 
   //Icon hover color
   .icon-1:hover,
   .icon-1.grid-selected {
-    background-color: var.$t-selected;
+    background-color: var.$t-grid-selected;
     .tool-color-1 {
       fill: var.$t-javascript-1;
     }
