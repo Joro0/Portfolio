@@ -66,8 +66,11 @@ $size-grid-img: 330px;
         grid-area: icon-#{$i};
         border: 3px solid var.$t-grid-border;
         border-radius: 5px;
+        position: relative;
         p {
           font-size: 12px;
+          position: absolute;
+          bottom: 2px;
         }
         svg {
           width: 60%;
@@ -141,6 +144,7 @@ $size-grid-img: 330px;
   }
   .icon-2:hover,
   .icon-2.grid-selected {
+    background-color: var.$t-grid-selected;
     .tool-color-1 {
       fill: var.$t-typescript-1;
     }
@@ -150,12 +154,14 @@ $size-grid-img: 330px;
   }
   .icon-3:hover,
   .icon-3.grid-selected {
+    background-color: var.$t-grid-selected;
     .tool-color-1 {
       fill: var.$t-react-1;
     }
   }
   .icon-4:hover,
   .icon-4.grid-selected {
+    background-color: var.$t-grid-selected;
     .tool-color-1 {
       fill: var.$t-angular-1;
     }
@@ -168,12 +174,14 @@ $size-grid-img: 330px;
   }
   .icon-5:hover,
   .icon-5.grid-selected {
+    background-color: var.$t-grid-selected;
     .tool-color-1 {
       fill: var.$t-next-1;
     }
   }
   .icon-6:hover,
   .icon-6.grid-selected {
+    background-color: var.$t-grid-selected;
     .tool-color-1 {
       fill: var.$t-git-1;
     }
@@ -183,12 +191,14 @@ $size-grid-img: 330px;
   }
   .icon-7:hover,
   .icon-7.grid-selected {
+    background-color: var.$t-grid-selected;
     .tool-color-1 {
       fill: var.$t-redux-1;
     }
   }
   .icon-8:hover,
   .icon-8.grid-selected {
+    background-color: var.$t-grid-selected;
     .tool-color-1 {
       fill: var.$t-sass-1;
     }
@@ -198,12 +208,14 @@ $size-grid-img: 330px;
   }
   .icon-9:hover,
   .icon-9.grid-selected {
+    background-color: var.$t-grid-selected;
     .tool-color-stroke {
       stroke: var.$t-three-1;
     }
   }
   .icon-10:hover,
   .icon-10.grid-selected {
+    background-color: var.$t-grid-selected;
     .tool-color-1 {
       fill: var.$t-fusion-1;
     }
@@ -219,6 +231,7 @@ $size-grid-img: 330px;
   }
   .icon-11:hover,
   .icon-11.grid-selected {
+    background-color: var.$t-grid-selected;
     .tool-color-1 {
       fill: var.$t-blender-1;
     }
@@ -231,6 +244,7 @@ $size-grid-img: 330px;
   }
   .icon-12:hover,
   .icon-12.grid-selected {
+    background-color: var.$t-grid-selected;
     .tool-color-1 {
       fill: var.$t-figma-1;
     }
@@ -249,6 +263,7 @@ $size-grid-img: 330px;
   }
   .icon-13:hover,
   .icon-13.grid-selected {
+    background-color: var.$t-grid-selected;
     .tool-color-1 {
       fill: var.$t-illustrator-1;
     }

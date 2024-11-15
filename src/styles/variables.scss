@@ -2,10 +2,12 @@
 $background-intro: #f0b63a;
 $background-about: #edeceb;
 $background-tool: #b54a48;
+$background-craft: #edeceb;
 
 $text-color-intro: #fff;
 $text-color-about: #937024;
 $text-color-tool: #edeceb;
+$text-color-craft: #461817;
 
 // About Colors
 $about-person: #edeceb;
@@ -49,6 +51,11 @@ $t-figma-5: #a259ff;
 $t-illustrator-1: #330000;
 $t-illustrator-2: #ff9a00;
 
+// Craft Colors
+$craft-label-color: #edeceb;
+$craft-label-background: #913b3a;
+$craft-item-background: #ffffff62;
+
 // Fonts
 $h1-size: 50px;
 $h2-size: 42px;
@@ -56,3 +63,4 @@ $h3-size: 30px;
 $p-size: 20px;
 $h1-family: "Unbounded", sans-serif;
 $general-family: "Space Grotesk", sans-serif;
+$craft-text-size: 16px;

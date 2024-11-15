@@ -39,18 +39,10 @@ const CraftItem = ({ title, accData, imgDir, position = "left" }: Props) => {
 
   return (
     <div className="craft-item">
-      {/* TITLE SHOULD CHANGE WITH POSITION LEFT-RIGHT */}
       <h3 style={{ textAlign: position === "left" ? "start" : "end" }}>
         {title}
       </h3>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          width: "100%",
-        }}
-      >
+      <div className="item-container">
         {position === "left" ? leftAccordion : rightAccordion}
       </div>
     </div>

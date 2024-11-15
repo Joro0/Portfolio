@@ -1,5 +1,6 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
   selectedItem: number;
@@ -20,10 +21,16 @@ const CraftAccordion = ({
             onClick={() => handleSelectedItem(index)}
             className="acc-button"
           >
-            {acc.title}
+            <p>{acc.title}</p>
+            <FontAwesomeIcon
+              icon={faAngleRight}
+              className={`acc-awesome ${selectedItem === index ? "open" : ""}`}
+            />
           </button>
           <div
-            className={`acc-content ${selectedItem === index ? "open" : ""}`}
+            className={`acc-text-content ${
+              selectedItem === index ? "open" : ""
+            }`}
           >
             <p className="acc-text">{acc.text}</p>
           </div>

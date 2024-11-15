@@ -1,3 +1,5 @@
+@use "../../styles/variables" as var;
+
 #craft-section {
   height: 100vh;
   width: 100%;
@@ -5,11 +7,33 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 70px;
+  padding: 0 180px;
+  background-color: var.$background-craft;
+  gap: 20px;
+  position: relative;
+
+  h2,
+  h3,
+  p,
+  button {
+    color: var.$text-color-craft;
+    z-index: 1;
+  }
 
   .craft-item {
     width: 100%;
+    overflow: hidden;
+    background-color: var.$craft-item-background;
+    padding: 40px;
+    border-radius: 30px;
+    z-index: 1;
 
+    .item-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
     .accordion-container {
       width: 280px;
 
@@ -18,25 +42,43 @@
         margin-bottom: 10px;
 
         .acc-button {
-          display: block;
+          display: flex;
           width: 100%;
           cursor: pointer;
-          text-align: left;
+          align-items: center;
+          flex-direction: row;
+          justify-content: space-between;
+          border: none;
+          background: none;
+          outline: none;
+          padding: 8px;
+
+          p {
+            font-size: var.$craft-text-size;
+            font-weight: bold;
+          }
+
+          .acc-awesome {
+            transition: transform 0.3s ease;
+            &.open {
+              transform: rotate(90deg);
+            }
+          }
         }
 
-        .acc-content {
+        .acc-text-content {
           overflow: hidden;
-          max-height: 0; // Start with zero height
+          max-height: 0;
           transition: max-height 0.3s ease, padding 0.3s ease;
-          padding: 0 10px; // Padding transition helps with a smoother effect
+          padding: 0 10px;
 
           &.open {
-            max-height: 100px; // Adjust based on content, or use `fit-content`
-            padding: 10px 10px; // Add padding when open
+            max-height: 100px;
+            padding: 10px 10px;
           }
 
           .acc-text {
-            font-size: 16px;
+            font-size: var.$craft-text-size;
           }
         }
       }
@@ -48,6 +90,7 @@
         gap: 8px;
         width: 100%;
         justify-content: center;
+        margin: 15px 0;
 
         .accordion-label {
           font-family: "Heebo", sans-serif;
@@ -55,8 +98,8 @@
           letter-spacing: 0.1rem;
           font-style: normal;
           text-transform: lowercase;
-          color: #fff;
-          background-color: #aaa7a7;
+          color: var.$craft-label-color;
+          background-color: var.$craft-label-background;
           border-radius: 1.25rem;
           -webkit-border-radius: 1.25rem;
           -moz-border-radius: 1.25rem;
@@ -65,13 +108,20 @@
       }
 
       .github-button {
-        font-size: 20px;
+        font-size: 22px;
+        display: block;
+        margin: 0 auto;
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+        background: none;
+        cursor: pointer;
       }
     }
 
     .image-container {
-      width: 750px;
-      height: 360px;
+      width: 850px;
+      height: 410px;
       position: relative;
       overflow: hidden;
       border-radius: 30px;
