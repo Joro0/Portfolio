@@ -4,6 +4,7 @@ import Craft from "./components/Craft/Craft";
 import Intro from "./components/Intro/Intro";
 import About from "./components/About/About";
 import Tool from "./components/Tool/Tool";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <About id="about-section" />
         <Tool id="tool-section" />
         <Craft id="craft-section" />
-        <section id="footer"></section>
+        <Footer />
       </div>
     </>
   );

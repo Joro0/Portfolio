@@ -1,0 +1,51 @@
+@use "../../styles/variables" as var;
+
+#footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  padding: 70px 90px;
+  background-color: var.$background-footer;
+
+  p,
+  a {
+    color: var.$text-color-footer;
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: flex-start;
+    gap: 40px;
+    p {
+      font-size: 16px;
+    }
+  }
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-content: center;
+    gap: 8px;
+
+    a {
+      font-size: 18px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: var.$footer-anchor-hover;
+    }
+    p {
+      font-size: 14px;
+    }
+    ul {
+      list-style-type: none;
+    }
+    li {
+      margin: 4px 0;
+    }
+  }
+}
