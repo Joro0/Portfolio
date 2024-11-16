@@ -18,9 +18,18 @@
     flex-direction: column;
     justify-content: flex-end;
     align-content: flex-start;
-    gap: 40px;
+    gap: 20px;
     p {
       font-size: 16px;
+    }
+    .logo-container {
+      width: 50px;
+      .logo-svg-path {
+        fill: none;
+        stroke: var.$text-color-footer;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
     }
   }
   .footer-right {

@@ -15,7 +15,7 @@ function App() {
         <About id="about-section" />
         <Tool id="tool-section" />
         <Craft id="craft-section" />
-        <Footer />
+        <Footer id="footer" />
       </div>
     </>
   );
