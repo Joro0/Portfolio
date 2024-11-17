@@ -4,36 +4,33 @@ import CraftImages from "./CraftImages";
 
 interface Props {
   title: string;
-  accData: { title: string; text: string }[];
-  imgDir: string[];
+  itemData: { title: string; text: string; img: string }[];
   position: "right" | "left";
 }
 
-const CraftItem = ({ title, accData, imgDir, position = "left" }: Props) => {
+const CraftItem = ({ title, itemData, position = "left" }: Props) => {
   const [selectedItem, setSelectedItem] = useState<number>(0);
   const handleSelectedItem = (item: number) => {
     setSelectedItem(item);
   };
 
-  const leftAccordion = (
+  const accordionItem = (
     <>
-      <CraftAccordion
-        selectedItem={selectedItem}
-        handleSelectedItem={handleSelectedItem}
-        accordionData={accData}
-      />
-      <CraftImages selectedItem={selectedItem} imageDirections={imgDir} />
-    </>
-  );
-
-  const rightAccordion = (
-    <>
-      <CraftImages selectedItem={selectedItem} imageDirections={imgDir} />
-      <CraftAccordion
-        selectedItem={selectedItem}
-        handleSelectedItem={handleSelectedItem}
-        accordionData={accData}
-      />
+      {position === "left" ? (
+        <CraftAccordion
+          selectedItem={selectedItem}
+          handleSelectedItem={handleSelectedItem}
+          accordionData={itemData}
+        />
+      ) : null}
+      <CraftImages selectedItem={selectedItem} itemData={itemData} />
+      {position === "right" ? (
+        <CraftAccordion
+          selectedItem={selectedItem}
+          handleSelectedItem={handleSelectedItem}
+          accordionData={itemData}
+        />
+      ) : null}
     </>
   );
 
@@ -42,9 +39,7 @@ const CraftItem = ({ title, accData, imgDir, position = "left" }: Props) => {
       <h3 style={{ textAlign: position === "left" ? "start" : "end" }}>
         {title}
       </h3>
-      <div className="item-container">
-        {position === "left" ? leftAccordion : rightAccordion}
-      </div>
+      <div className="item-container">{accordionItem}</div>
     </div>
   );
 };

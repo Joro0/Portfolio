@@ -6,29 +6,22 @@ interface Props {
 }
 
 const Craft = ({ id }: Props) => {
-  const accordionData: { title: string; text: string }[] = [
-    {
-      title: "Introduction",
-      text: "This app is a custom-built item checker, designed to save time and simplify the process of matching product codes.",
-    },
+  const accordionData: { title: string; text: string; img: string }[] = [
     {
       title: "Why",
-      text: "The accountant used Excel to match thousands of items with Excel functions, making the task tedious and time-consuming.",
+      text: "This app streamlines the tedious task of matching thousands of product codes (SKUs) by replacing manual Excel functions with an efficient, custom-built solution.",
+      img: "/images/skucheker_why.webp",
     },
     {
       title: "What",
       text: "The app reads two Excel files, filters out unnecessary data, and matches items from the report.",
+      img: "/images/skucheker_what.webp",
     },
     {
       title: "How",
       text: "Built with JavaScript, Html, Css. The app uses an Excel library and regular expressions, reducing the task from 10 hours to 5 minutes.",
+      img: "/images/skucheker_how.webp",
     },
-  ];
-  const imageDirections: string[] = [
-    "/images/skucheker_intro.jpg",
-    "/images/skucheker_why.jpg",
-    "/images/skucheker_what.jpg",
-    "/images/skucheker_how.jpg",
   ];
 
   return (
@@ -36,8 +29,7 @@ const Craft = ({ id }: Props) => {
       <h2>Crafts</h2>
       <CraftItem
         title={"Sku Checker"}
-        accData={accordionData}
-        imgDir={imageDirections}
+        itemData={accordionData}
         position="left"
       />
       {/* Playground section */}
