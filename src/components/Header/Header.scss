@@ -2,23 +2,51 @@
 
 #header {
   display: flex;
-  position: absolute;
   overflow: visible;
   align-items: center;
   justify-content: center;
-  z-index: 2;
-
-  height: 64px;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  z-index: 3;
+  height: 50px;
   gap: 30px;
   padding-left: 20px;
   padding-right: 20px;
+  width: 400px;
+  border-radius: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: background-color 0.6s ease;
 
   a {
-    color: var.$text-color-intro;
     text-decoration: none;
     font-weight: 400;
+  }
+}
+
+.pos-absolute {
+  position: absolute;
+  background-color: none;
+  top: 25px;
+  a {
+    color: var.$text-color-intro;
+  }
+}
+
+.pos-fixed {
+  background-color: hsla(0, 0%, 90%, 0.5);
+  backdrop-filter: blur(12.5px);
+  position: fixed;
+  top: 0px;
+  animation: a1 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  a {
+    color: var.$text-color-footer;
+  }
+}
+
+@keyframes a1 {
+  0% {
+    top: -48px;
+  }
+  100% {
+    top: 25px;
   }
 }
