@@ -24,6 +24,7 @@ const Header = ({ id }: Props) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <section id={id} className={isFixed ? "pos-fixed" : "pos-absolute"}>
       <a href="#intro-section">Home</a>
