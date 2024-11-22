@@ -1,7 +1,7 @@
 @use "../../styles/variables" as var;
 
 $size-grid: 110px;
-$size-grid-img: 330px;
+$size-grid-img: 440px;
 
 #tool-section {
   height: 100vh;
@@ -40,14 +40,15 @@ $size-grid-img: 330px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    gap: 2px;
+    gap: 6px;
     grid-template-areas:
-      "icon-1 icon-2  title-1  .        .        . .          .           ."
-      "icon-3 icon-4  icon-5  title-2   .        . title-tool title-tool  title-tool"
-      ".      icon-6  icon-7  icon-9   title-3   . img-tool   img-tool    img-tool"
-      ".      .       icon-8  icon-10  icon-12  . img-tool    img-tool    img-tool"
-      ".      .       .       icon-11  icon-13  . img-tool    img-tool    img-tool";
-    grid-template-columns: auto auto auto auto auto 50px auto auto auto;
+      ".        .         icon-1    icon-2    .         .         . .           title-tool  title-tool  title-tool"
+      ".        icon-3    icon-4    icon-5    icon-6    .         . img-tool    img-tool    img-tool    img-tool"
+      "icon-7   icon-8    icon-9    icon-10   icon-11   icon-12   . img-tool    img-tool    img-tool    img-tool"
+      ".        icon-13   icon-14   icon-15   icon-16   .         . img-tool    img-tool    img-tool    img-tool"
+      ".        .         icon-17   icon-18   .         .         . img-tool    img-tool    img-tool    img-tool";
+
+    grid-template-columns: auto auto auto auto auto auto 50px auto auto auto auto;
 
     div {
       display: flex;
@@ -58,8 +59,8 @@ $size-grid-img: 330px;
       transition: background-color 0.3s ease;
     }
 
-    // Tool grid (frontend, 3d, 2d)
-    @for $i from 1 through 13 {
+    // Tool grid (frontend, 3d, backend)
+    @for $i from 1 through 18 {
       .icon-#{$i} {
         width: $size-grid;
         height: $size-grid;
@@ -78,19 +79,6 @@ $size-grid-img: 330px;
       }
     }
 
-    // Title grid
-    @for $i from 1 through 3 {
-      .title-#{$i} {
-        grid-area: title-#{$i};
-        justify-content: flex-end;
-        width: $size-grid;
-        height: $size-grid;
-        .title-grid {
-          font-weight: 600;
-          margin: 0;
-        }
-      }
-    }
     // Title section grid
     .title-tool {
       grid-area: title-tool;
@@ -107,9 +95,21 @@ $size-grid-img: 330px;
       border: 3px solid var.$t-grid-border;
       border-radius: 20px;
       background-color: var.$t-grid-selected;
+      position: relative;
+      .img-tool-icon {
+        width: 50px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+
+        path {
+          fill: var.$t-grid-border;
+        }
+      }
     }
   }
 
+  //------ICON COLOR-------------
   //Icon unselected color
   .tool-color-1,
   .tool-color-3,
@@ -209,42 +209,6 @@ $size-grid-img: 330px;
   .icon-9:hover,
   .icon-9.grid-selected {
     background-color: var.$t-grid-selected;
-    .tool-color-stroke {
-      stroke: var.$t-three-1;
-    }
-  }
-  .icon-10:hover,
-  .icon-10.grid-selected {
-    background-color: var.$t-grid-selected;
-    .tool-color-1 {
-      fill: var.$t-fusion-1;
-    }
-    .tool-color-2 {
-      fill: var.$t-fusion-2;
-    }
-    .tool-color-3 {
-      fill: var.$t-fusion-3;
-    }
-    .tool-color-4 {
-      fill: var.$t-fusion-4;
-    }
-  }
-  .icon-11:hover,
-  .icon-11.grid-selected {
-    background-color: var.$t-grid-selected;
-    .tool-color-1 {
-      fill: var.$t-blender-1;
-    }
-    .tool-color-2 {
-      fill: var.$t-blender-2;
-    }
-    .tool-color-3 {
-      fill: var.$t-blender-3;
-    }
-  }
-  .icon-12:hover,
-  .icon-12.grid-selected {
-    background-color: var.$t-grid-selected;
     .tool-color-1 {
       fill: var.$t-figma-1;
     }
@@ -261,14 +225,116 @@ $size-grid-img: 330px;
       fill: var.$t-figma-5;
     }
   }
-  .icon-13:hover,
-  .icon-13.grid-selected {
+  .icon-10:hover,
+  .icon-10.grid-selected {
     background-color: var.$t-grid-selected;
     .tool-color-1 {
       fill: var.$t-illustrator-1;
     }
     .tool-color-2 {
       fill: var.$t-illustrator-2;
+    }
+  }
+
+  .icon-11:hover,
+  .icon-11.grid-selected {
+    background-color: var.$t-grid-selected;
+    .tool-color-1 {
+      fill: var.$t-c-1;
+    }
+    .tool-color-2 {
+      fill: var.$t-c-4;
+    }
+    .tool-color-3 {
+      fill: var.$t-c-2;
+    }
+    .tool-color-4 {
+      fill: var.$t-c-3;
+    }
+  }
+  .icon-12:hover,
+  .icon-12.grid-selected {
+    background-color: var.$t-grid-selected;
+    .tool-color-1 {
+      fill: var.$t-c2-1;
+    }
+    .tool-color-2 {
+      fill: var.$t-c2-4;
+    }
+    .tool-color-3 {
+      fill: var.$t-c2-2;
+    }
+    .tool-color-4 {
+      fill: var.$t-c2-3;
+    }
+  }
+  .icon-13:hover,
+  .icon-13.grid-selected {
+    background-color: var.$t-grid-selected;
+    .tool-color-1 {
+      fill: var.$t-c4-1;
+    }
+    .tool-color-2 {
+      fill: var.$t-c4-4;
+    }
+    .tool-color-3 {
+      fill: var.$t-c4-2;
+    }
+    .tool-color-4 {
+      fill: var.$t-c4-3;
+    }
+  }
+  .icon-14:hover,
+  .icon-14.grid-selected {
+    background-color: var.$t-grid-selected;
+    .tool-color-1 {
+      fill: var.$t-python-1;
+    }
+    .tool-color-3 {
+      fill: var.$t-python-2;
+    }
+  }
+  .icon-15:hover,
+  .icon-15.grid-selected {
+    background-color: var.$t-grid-selected;
+    .tool-color-1 {
+      fill: var.$t-sql-1;
+    }
+  }
+  .icon-16:hover,
+  .icon-16.grid-selected {
+    background-color: var.$t-grid-selected;
+    .tool-color-stroke {
+      stroke: var.$t-three-1;
+    }
+  }
+  .icon-17:hover,
+  .icon-17.grid-selected {
+    background-color: var.$t-grid-selected;
+    .tool-color-1 {
+      fill: var.$t-fusion-1;
+    }
+    .tool-color-2 {
+      fill: var.$t-fusion-2;
+    }
+    .tool-color-3 {
+      fill: var.$t-fusion-3;
+    }
+    .tool-color-4 {
+      fill: var.$t-fusion-4;
+    }
+  }
+  .icon-18:hover,
+  .icon-18.grid-selected {
+    background-color: var.$t-grid-selected;
+    .tool-color-1 {
+      fill: var.$t-blender-1;
+    }
+    .tool-color-2 {
+      fill: var.$t-blender-2;
+    }
+    .tool-color-3 {
+      fill: var.$t-blender-3;
     }
   }
 }

@@ -17,17 +17,21 @@ const Tool = ({ id }: Props) => {
     "git",
     "redux",
     "sass",
+    "figma",
+    "illustrator",
   ];
-  const threeDList = ["three", "fusion", "blender"];
-  const twoDList = ["figma", "illustrator"];
-  const titleList = ["FRONT-END", "3D", "2D"];
+  const threeDList = ["three", "fusion", "blender"]; //11,12,13
+  const titleList = ["FRONT-END", "3D", "2D", "BACK-END"];
+  const backEndList = ["c", "c++", "c#", "python", "sql"]; //14,15..18
 
   const [clickedZone, setClickedZone] = useState<number>(0);
+
   return (
     <section id={id}>
       <div className="tool-pattern"></div>
 
       <div className="tool-grid">
+        {/* Icons */}
         {frontEndList.map((icon, index) => (
           <div
             className={`icon-${index + 1} ${
@@ -40,21 +44,9 @@ const Tool = ({ id }: Props) => {
             <ToolSvg svg={icon} />
           </div>
         ))}
-        {threeDList.map((icon, index) => (
+        {backEndList.map((icon, index) => (
           <div
-            className={`icon-${index + 9} ${
-              clickedZone === 2 ? "grid-selected" : ""
-            }`}
-            onClick={() => {
-              setClickedZone(2);
-            }}
-          >
-            <ToolSvg svg={icon} />
-          </div>
-        ))}
-        {twoDList.map((icon, index) => (
-          <div
-            className={`icon-${index + 12} ${
+            className={`icon-${index + 11} ${
               clickedZone === 3 ? "grid-selected" : ""
             }`}
             onClick={() => {
@@ -64,11 +56,20 @@ const Tool = ({ id }: Props) => {
             <ToolSvg svg={icon} />
           </div>
         ))}
-        {titleList.map((title, index) => (
-          <div className={`title-${index + 1}`}>
-            <p className="title-grid">{title}</p>
+        {threeDList.map((icon, index) => (
+          <div
+            className={`icon-${index + 16} ${
+              clickedZone === 2 ? "grid-selected" : ""
+            }`}
+            onClick={() => {
+              setClickedZone(2);
+            }}
+          >
+            <ToolSvg svg={icon} />
           </div>
         ))}
+
+        {/* Title section and imgs */}
         <div className="img-tool">
           <ToolRefImg imgType={clickedZone} />
         </div>
