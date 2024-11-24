@@ -68,10 +68,16 @@ $size-grid-img: 440px;
         border: 3px solid var.$t-grid-border;
         border-radius: 5px;
         position: relative;
-        p {
+        overflow: hidden;
+        .tool-icon-name {
           font-size: 12px;
           position: absolute;
           bottom: 2px;
+          transform: translate(0, 20px);
+          transition: transform 0.3s ease;
+          &.icon-name-selected {
+            transform: translate(0, 0);
+          }
         }
         svg {
           width: 60%;

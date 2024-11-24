@@ -1,8 +1,11 @@
+import { svgTest } from "./ToolSvgIcons";
+
 interface Props {
   svg: string;
+  isSelected: boolean;
 }
 
-const ToolSvg = ({ svg }: Props) => {
+const ToolSvg = ({ svg, isSelected }: Props) => {
   //Icon Svg
   //frontend
   const svgJs = (
@@ -468,7 +471,13 @@ const ToolSvg = ({ svg }: Props) => {
       return (
         <>
           {icon.iconSvg}
-          <p className="tool-icon-name">{icon.iconName}</p>
+          <p
+            className={`tool-icon-name ${
+              isSelected ? "icon-name-selected" : ""
+            }`}
+          >
+            {icon.iconName}
+          </p>
         </>
       );
   }

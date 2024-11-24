@@ -22,8 +22,8 @@
     flex-wrap: nowrap;
     gap: 10px;
     position: absolute;
-    top: 25px;
-    left: 40px;
+    top: 20px;
+    left: 20px;
     z-index: 2;
     user-select: none;
     p {
@@ -73,8 +73,7 @@
     }
     .presentation-text {
       max-width: 455px;
-      position: relative;
-      left: 250px;
+      margin-left: 35%;
     }
   }
 }

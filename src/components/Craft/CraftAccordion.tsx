@@ -45,7 +45,7 @@ const CraftAccordion = ({
       </div>
 
       <button className="github-button">
-        <FontAwesomeIcon icon={faGithub} /> View Work
+        <FontAwesomeIcon icon={faGithub} /> View Code
       </button>
     </div>
   );

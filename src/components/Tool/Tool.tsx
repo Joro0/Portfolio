@@ -41,7 +41,7 @@ const Tool = ({ id }: Props) => {
               setClickedZone(1);
             }}
           >
-            <ToolSvg svg={icon} />
+            <ToolSvg svg={icon} isSelected={clickedZone === 1} />
           </div>
         ))}
         {backEndList.map((icon, index) => (
@@ -53,7 +53,7 @@ const Tool = ({ id }: Props) => {
               setClickedZone(3);
             }}
           >
-            <ToolSvg svg={icon} />
+            <ToolSvg svg={icon} isSelected={clickedZone === 3} />
           </div>
         ))}
         {threeDList.map((icon, index) => (
@@ -65,7 +65,7 @@ const Tool = ({ id }: Props) => {
               setClickedZone(2);
             }}
           >
-            <ToolSvg svg={icon} />
+            <ToolSvg svg={icon} isSelected={clickedZone === 2} />
           </div>
         ))}
 
