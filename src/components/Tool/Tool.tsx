@@ -24,7 +24,7 @@ const Tool = ({ id }: Props) => {
   const titleList = ["FRONT-END", "3D", "2D", "BACK-END"];
   const backEndList = ["c", "c++", "c#", "python", "sql"]; //14,15..18
 
-  const [clickedZone, setClickedZone] = useState<number>(0);
+  const [clickedZone, setClickedZone] = useState<number>(1);
 
   return (
     <section id={id}>
@@ -34,7 +34,7 @@ const Tool = ({ id }: Props) => {
         {/* Icons */}
         {frontEndList.map((icon, index) => (
           <div
-            className={`icon-${index + 1} ${
+            className={`icon-${index + 1} grid-div ${
               clickedZone === 1 ? "grid-selected" : ""
             }`}
             onClick={() => {
@@ -46,7 +46,7 @@ const Tool = ({ id }: Props) => {
         ))}
         {backEndList.map((icon, index) => (
           <div
-            className={`icon-${index + 11} ${
+            className={`icon-${index + 11} grid-div ${
               clickedZone === 3 ? "grid-selected" : ""
             }`}
             onClick={() => {
@@ -58,7 +58,7 @@ const Tool = ({ id }: Props) => {
         ))}
         {threeDList.map((icon, index) => (
           <div
-            className={`icon-${index + 16} ${
+            className={`icon-${index + 16} grid-div ${
               clickedZone === 2 ? "grid-selected" : ""
             }`}
             onClick={() => {

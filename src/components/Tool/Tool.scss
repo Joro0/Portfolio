@@ -1,7 +1,14 @@
 @use "../../styles/variables" as var;
 
 $size-grid: 110px;
+$size-grid-laptop: 100px;
+$size-grid-tablet: 80px;
+$size-grid-phone: 80px;
+
 $size-grid-img: 440px;
+$size-grid-img-laptop: 400px;
+$size-grid-img-tablet: 240px;
+$size-grid-img-phone: 240px;
 
 #tool-section {
   height: 100vh;
@@ -51,6 +58,13 @@ $size-grid-img: 440px;
 
     grid-template-columns: auto auto auto auto auto auto 50px auto auto auto auto;
 
+    // Grid icon position
+    @for $i from 1 through 18 {
+      .icon-#{$i} {
+        grid-area: icon-#{$i};
+      }
+    }
+
     div {
       display: flex;
       position: relative;
@@ -60,45 +74,37 @@ $size-grid-img: 440px;
       transition: background-color 0.3s ease;
     }
 
-    // Tool grid (frontend, 3d, backend)
-    @for $i from 1 through 18 {
-      .icon-#{$i} {
-        width: $size-grid;
-        height: $size-grid;
-        grid-area: icon-#{$i};
-        border: 3px solid var.$t-grid-border;
-        border-radius: 5px;
-        position: relative;
-        overflow: hidden;
-        .tool-icon-name {
-          font-size: 12px;
-          position: absolute;
-          bottom: 2px;
-          transform: translate(0, 20px);
-          transition: transform 0.3s ease;
-          &.icon-name-selected {
-            transform: translate(0, 0);
-          }
+    .grid-div {
+      // width: $size-grid;
+      // height: $size-grid;
+      border: 3px solid var.$t-grid-border;
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+      .tool-icon-name {
+        // font-size: 12px;
+        position: absolute;
+        bottom: 2px;
+        transform: translate(0, 20px);
+        transition: transform 0.3s ease;
+        &.icon-name-selected {
+          transform: translate(0, 0);
         }
-        svg {
-          width: 60%;
-        }
+      }
+      svg {
+        width: 60%;
       }
     }
 
-    // Title section grid
     .title-tool {
       grid-area: title-tool;
       h2 {
         width: 100%;
-        text-align: right;
       }
     }
     // Img grid
     .img-tool {
       grid-area: img-tool;
-      width: $size-grid-img;
-      height: $size-grid-img;
       border: 3px solid var.$t-grid-border;
       border-radius: 20px;
       background-color: var.$t-grid-selected;
@@ -138,7 +144,7 @@ $size-grid-img: 440px;
     background-color: var.$t-grid-selected;
   }
 
-  //Icon hover color
+  //-----ICON HOVER COLOR---------
   .icon-1:hover,
   .icon-1.grid-selected {
     background-color: var.$t-grid-selected;
@@ -342,6 +348,107 @@ $size-grid-img: 440px;
     }
     .tool-color-3 {
       fill: var.$t-blender-3;
+    }
+  }
+}
+
+//desktop
+@media only screen and (min-width: 1441px) {
+  #tool-section {
+    .grid-div {
+      width: $size-grid;
+      height: $size-grid;
+      .tool-icon-name {
+        font-size: 0.75rem;
+      }
+    }
+    .img-tool {
+      width: $size-grid-img;
+      height: $size-grid-img;
+    }
+    .title-tool {
+      h2 {
+        text-align: right;
+      }
+    }
+  }
+}
+//laptops
+@media only screen and (max-width: 1440px) {
+  #tool-section {
+    .tool-grid {
+      grid-template-columns: auto auto auto auto auto auto 10px auto auto auto auto;
+    }
+    .grid-div {
+      width: $size-grid-laptop;
+      height: $size-grid-laptop;
+      .tool-icon-name {
+        font-size: 0.75rem;
+      }
+    }
+    .img-tool {
+      width: $size-grid-img-laptop;
+      height: $size-grid-img-laptop;
+    }
+    .title-tool {
+      h2 {
+        text-align: right;
+      }
+    }
+  }
+}
+//tablets and mini-laptops
+@media only screen and (max-width: 1100px) {
+  #tool-section {
+    .tool-grid {
+      grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
+    }
+    .grid-div {
+      width: $size-grid-tablet;
+      height: $size-grid-tablet;
+      .tool-icon-name {
+        font-size: 0.6rem;
+      }
+    }
+    .img-tool {
+      width: $size-grid-img-tablet;
+      height: $size-grid-img-tablet;
+    }
+    .title-tool {
+      h2 {
+        text-align: right;
+      }
+    }
+  }
+}
+//phone
+@media only screen and (max-width: 768px) {
+  #tool-section {
+    .tool-grid {
+      grid-template-areas:
+        ".        title-tool title-tool title-tool  ."
+        "icon-1   icon-2    img-tool    img-tool    img-tool"
+        "icon-3   icon-4    img-tool    img-tool    img-tool"
+        "icon-5   icon-6    img-tool    img-tool    img-tool"
+        "icon-7   icon-8    icon-9      icon-10     icon-11"
+        "icon-12  icon-13   icon-14     icon-15     icon-16"
+        "icon-17  icon-18   .           .           .";
+    }
+    .grid-div {
+      width: $size-grid-phone;
+      height: $size-grid-phone;
+      .tool-icon-name {
+        font-size: 0.6rem;
+      }
+    }
+    .img-tool {
+      width: $size-grid-img-phone;
+      height: $size-grid-img-phone;
+    }
+    .title-tool {
+      h2 {
+        text-align: center;
+      }
     }
   }
 }
