@@ -137,5 +137,10 @@
     p {
       font-size: var.$p-phone-size;
     }
+
+    .about-image {
+      width: auto;
+      min-width: 200px;
+    }
   }
 }

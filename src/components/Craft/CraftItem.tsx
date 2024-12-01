@@ -14,32 +14,19 @@ const CraftItem = ({ title, itemData, position = "left" }: Props) => {
     setSelectedItem(item);
   };
 
-  const accordionItem = (
-    <>
-      {position === "left" ? (
-        <CraftAccordion
-          selectedItem={selectedItem}
-          handleSelectedItem={handleSelectedItem}
-          accordionData={itemData}
-        />
-      ) : null}
-      <CraftImages selectedItem={selectedItem} itemData={itemData} />
-      {position === "right" ? (
-        <CraftAccordion
-          selectedItem={selectedItem}
-          handleSelectedItem={handleSelectedItem}
-          accordionData={itemData}
-        />
-      ) : null}
-    </>
-  );
-
   return (
     <div className="craft-item">
       <h3 style={{ textAlign: position === "left" ? "start" : "end" }}>
         {title}
       </h3>
-      <div className="item-container">{accordionItem}</div>
+      <div className={`item-container ${position}`}>
+        <CraftAccordion
+          selectedItem={selectedItem}
+          handleSelectedItem={handleSelectedItem}
+          accordionData={itemData}
+        />
+        <CraftImages selectedItem={selectedItem} itemData={itemData} />
+      </div>
     </div>
   );
 };
