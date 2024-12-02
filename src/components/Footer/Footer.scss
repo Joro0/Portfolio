@@ -5,7 +5,6 @@
   flex-direction: row;
   justify-content: space-between;
   align-content: center;
-  padding: 70px 90px;
   background-color: var.$background-footer;
 
   p,
@@ -19,9 +18,7 @@
     justify-content: flex-end;
     align-content: flex-start;
     gap: 20px;
-    p {
-      font-size: 16px;
-    }
+
     .logo-container {
       width: 50px;
       .logo-svg-path {
@@ -40,7 +37,7 @@
     gap: 8px;
 
     a {
-      font-size: 18px;
+      font-size: var.$p-phone-size;
       text-decoration: none;
       transition: color 0.3s ease;
     }
@@ -55,6 +52,53 @@
     }
     li {
       margin: 4px 0;
+    }
+  }
+}
+
+//desktop
+@media only screen and (min-width: 1441px) {
+  #footer {
+    padding: 70px 90px;
+    .footer-left {
+      p {
+        font-size: var.$p-phone-size;
+      }
+    }
+  }
+}
+//laptop
+@media only screen and (max-width: 1440px) {
+  #footer {
+    padding: 70px 90px;
+    .footer-left {
+      p {
+        font-size: var.$p-phone-size;
+      }
+    }
+  }
+}
+//tablet
+@media only screen and (max-width: 1024px) {
+  #footer {
+    padding: 70px 30px;
+  }
+}
+//phones(horizontal)
+@media only screen and (max-width: 767px) {
+  #footer {
+  }
+}
+//phones(vertical)
+@media only screen and (max-width: 480px) {
+  #footer {
+    .footer-left {
+      p {
+        font-size: var.$p-footer-phone-size;
+      }
+    }
+    .footer-right {
+      margin-left: 15px;
     }
   }
 }
