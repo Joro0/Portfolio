@@ -4,23 +4,26 @@ $size-grid: 110px;
 $size-grid-laptop: 100px;
 $size-grid-tablet: 80px;
 $size-grid-phone: 80px;
+$size-grid-phone-v: 65px;
 
 $size-grid-img: 440px;
 $size-grid-img-laptop: 400px;
 $size-grid-img-tablet: 240px;
 $size-grid-img-phone: 255px;
+$size-grid-img-phone-v: 210px;
 
 #tool-section {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-color: var.$background-tool;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 100px;
   position: relative;
   overflow: hidden;
+  padding-top: 40px;
+  padding-bottom: 40px;
 
   h2,
   p {
@@ -48,7 +51,6 @@ $size-grid-img-phone: 255px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    gap: 6px;
     grid-template-areas:
       ".        .         icon-1    icon-2    .         .         . .           title-tool  title-tool  title-tool"
       ".        icon-3    icon-4    icon-5    icon-6    .         . img-tool    img-tool    img-tool    img-tool"
@@ -75,14 +77,11 @@ $size-grid-img-phone: 255px;
     }
 
     .grid-div {
-      // width: $size-grid;
-      // height: $size-grid;
       border: 3px solid var.$t-grid-border;
       border-radius: 5px;
       position: relative;
       overflow: hidden;
       .tool-icon-name {
-        // font-size: 12px;
         position: absolute;
         bottom: 2px;
         transform: translate(0, 20px);
@@ -355,6 +354,9 @@ $size-grid-img-phone: 255px;
 //desktop
 @media only screen and (min-width: 1441px) {
   #tool-section {
+    .tool-grid {
+      gap: 6px;
+    }
     .grid-div {
       width: $size-grid;
       height: $size-grid;
@@ -378,6 +380,7 @@ $size-grid-img-phone: 255px;
   #tool-section {
     .tool-grid {
       grid-template-columns: auto auto auto auto auto auto 10px auto auto auto auto;
+      gap: 6px;
     }
     .grid-div {
       width: $size-grid-laptop;
@@ -402,6 +405,7 @@ $size-grid-img-phone: 255px;
   #tool-section {
     .tool-grid {
       grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
+      gap: 6px;
     }
     .grid-div {
       width: $size-grid-tablet;
@@ -433,6 +437,7 @@ $size-grid-img-phone: 255px;
         "icon-7   icon-8    icon-9      icon-10     icon-11"
         "icon-12  icon-13   icon-14     icon-15     icon-16"
         "icon-17  icon-18   .           .           .";
+      gap: 6px;
     }
     .grid-div {
       width: $size-grid-phone;
@@ -444,6 +449,38 @@ $size-grid-img-phone: 255px;
     .img-tool {
       width: $size-grid-img-phone;
       height: $size-grid-img-phone;
+    }
+    .title-tool {
+      h2 {
+        text-align: center;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 480px) {
+  #tool-section {
+    .tool-grid {
+      transform: translate(4px, 0px);
+      gap: 2px;
+      grid-template-areas:
+        ".        title-tool title-tool title-tool  ."
+        "icon-1   icon-2    img-tool    img-tool    img-tool"
+        "icon-3   icon-4    img-tool    img-tool    img-tool"
+        "icon-5   icon-6    img-tool    img-tool    img-tool"
+        "icon-7   icon-8    icon-9      icon-10     icon-11"
+        "icon-12  icon-13   icon-14     icon-15     icon-16"
+        "icon-17  icon-18   .           .           .";
+    }
+    .grid-div {
+      width: $size-grid-phone-v;
+      height: $size-grid-phone-v;
+      .tool-icon-name {
+        font-size: 0.5rem;
+      }
+    }
+    .img-tool {
+      width: $size-grid-img-phone-v;
+      height: $size-grid-img-phone-v;
     }
     .title-tool {
       h2 {

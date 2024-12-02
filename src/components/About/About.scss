@@ -1,13 +1,11 @@
 @use "../../styles/variables" as var;
 
 #about-section {
-  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0 180px;
   position: relative;
   overflow: hidden;
   background-color: var.$background-about;
@@ -47,6 +45,7 @@
 
   .about-image {
     width: 350px;
+    display: block;
     min-width: 350px;
     z-index: 1;
 
@@ -86,6 +85,7 @@
 //desktops
 @media only screen and (max-width: 1280px) {
   #about-section {
+    min-height: 100vh;
     padding: 100px;
     .about-image {
       width: 320px;
@@ -98,7 +98,7 @@
   #about-section {
     padding: 100px 150px;
     flex-direction: column-reverse;
-    height: 100vh;
+    min-height: 100vh;
     .about-image {
       width: 250px;
       min-width: 250px;
@@ -121,9 +121,9 @@
 //tablets
 @media only screen and (max-width: 768px) {
   #about-section {
-    height: auto;
     padding-left: 100px;
     padding-right: 100px;
+    min-height: 100vh;
   }
 }
 //phones
@@ -131,6 +131,7 @@
   #about-section {
     padding-left: 60px;
     padding-right: 60px;
+    min-height: 100vh;
     h2 {
       font-size: var.$h2-phone-size;
     }

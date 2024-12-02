@@ -52,7 +52,7 @@ const Footer = ({ id }: Props) => {
           </li>
           <li>
             <a
-              href="../../../public/pdf/cv-jose-zuniga.pdf"
+              href="/pdf/cv-jose-zuniga.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >

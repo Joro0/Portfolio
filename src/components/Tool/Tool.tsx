@@ -21,7 +21,6 @@ const Tool = ({ id }: Props) => {
     "illustrator",
   ];
   const threeDList = ["three", "fusion", "blender"]; //11,12,13
-  const titleList = ["FRONT-END", "3D", "2D", "BACK-END"];
   const backEndList = ["c", "c++", "c#", "python", "sql"]; //14,15..18
 
   const [clickedZone, setClickedZone] = useState<number>(1);
