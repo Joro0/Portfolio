@@ -5,6 +5,8 @@ interface Props {
 }
 
 const Footer = ({ id }: Props) => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <section id={id}>
       <div className="footer-left">
@@ -28,7 +30,7 @@ const Footer = ({ id }: Props) => {
           </svg>
         </div>
         <div>
-          <p>© 2024 Jose Zuñiga. All Rights Reserved.</p>
+          <p>© {currentYear} Jose Zuñiga. All Rights Reserved.</p>
           <p>
             Made with love and Earl Grey Tea Lattes (light on the bergamot,
             extra calm).

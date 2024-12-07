@@ -5,34 +5,40 @@ interface Props {
   id: string;
 }
 
-const Header = ({ id }: Props) => {
+const Header: React.FC<Props> = ({ id }) => {
   const [isFixed, setIsFixed] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 80) {
-        setIsFixed(true);
-      } else {
-        setIsFixed(false);
-      }
+      setIsFixed(window.scrollY > 80);
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
+  const navLinks = [
+    { href: "#intro-section", label: "Home" },
+    { href: "#about-section", label: "About" },
+    { href: "#tool-section", label: "Tools" },
+    { href: "#craft-section", label: "Crafts" },
+    { href: "#footer", label: "Contact" },
+  ];
+
   return (
-    <section id={id} className={isFixed ? "pos-fixed" : "pos-absolute"}>
-      <a href="#intro-section">Home</a>
-      <a href="#about-section">About</a>
-      <a href="#tool-section">Tools</a>
-      <a href="#craft-section">Crafts</a>
-      <a href="#footer">Contact</a>
-    </section>
+    <header
+      id={id}
+      className={`header ${isFixed ? "pos-fixed" : "pos-absolute"}`}
+    >
+      {navLinks.map(({ href, label }, index) => (
+        <a key={index} href={href}>
+          {label}
+        </a>
+      ))}
+    </header>
   );
 };
 
