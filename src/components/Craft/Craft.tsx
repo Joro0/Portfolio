@@ -10,17 +10,17 @@ const Craft = ({ id }: Props) => {
     {
       title: "Why",
       text: "This app streamlines the tedious task of matching thousands of product codes (SKUs) by replacing manual Excel functions with an efficient, custom-built solution.",
-      img: "/images/skucheker_why.webp",
+      img: "/Portfolio/images/skucheker_why.webp",
     },
     {
       title: "What",
       text: "The app reads two Excel files, filters out unnecessary data, and matches items from the report.",
-      img: "/images/skucheker_what.webp",
+      img: "/Portfolio/images/skucheker_what.webp",
     },
     {
       title: "How",
       text: "Built with JavaScript, Html, Css. The app uses an Excel library and regular expressions, reducing the task from 10 hours to 5 minutes.",
-      img: "/images/skucheker_how.webp",
+      img: "/Portfolio/images/skucheker_how.webp",
     },
   ];
 
