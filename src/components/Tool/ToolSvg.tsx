@@ -1,5 +1,3 @@
-import { svgTest } from "./ToolSvgIcons";
-
 interface Props {
   svg: string;
   isSelected: boolean;
