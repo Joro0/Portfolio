@@ -59,6 +59,7 @@ const ToolRefImg = ({ imgType }: Props) => {
                   transform="translate(-5.45 -6.44)"
                 />
               </svg>
+              <p>Drag to Rotate</p>
             </div>
           </>
         );

@@ -51,6 +51,7 @@ const Intro = ({ id }: Props) => {
         </p>
       </div>
 
+      <div className="intro-test"></div>
       <IntroCanvas />
     </section>
   );
