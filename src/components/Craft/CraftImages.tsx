@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 interface Props {
   selectedItem: number;
@@ -6,16 +6,29 @@ interface Props {
 }
 
 const CraftImages = ({ selectedItem, itemData }: Props) => {
-  useEffect(() => {
-    // Preload the image when the selected item changes
-    const imageToPreload1 = new Image();
-    const imageToPreload2 = new Image();
-    const imageToPreload3 = new Image();
-    imageToPreload1.src = itemData[0].img;
-    imageToPreload2.src = itemData[1].img;
-    imageToPreload3.src = itemData[2].img;
-  }, []);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
+  useEffect(() => {
+    // Preload all images and wait for them to fully load
+    const preloadImages = async () => {
+      const promises = itemData.map(({ img }) => {
+        return new Promise<void>((resolve) => {
+          const image = new Image();
+          image.src = img;
+          image.onload = () => resolve();
+        });
+      });
+
+      await Promise.all(promises);
+      setImagesLoaded(true); // All images are now loaded
+    };
+
+    preloadImages();
+  }, [itemData]);
+
+  if (!imagesLoaded) {
+    return <div>Loading...</div>; // Optional: Show a loader while preloading
+  }
   return (
     <div className="image-container">
       <img
