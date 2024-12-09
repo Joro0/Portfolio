@@ -48,7 +48,7 @@ const CraftImages = ({ selectedItem, itemData }: Props) => {
         className="image-item"
         style={{
           transform:
-            selectedItem === 2 ? "translate(-200%, 0)" : "translate(0, 0)",
+            selectedItem === 2 ? "translate(-200%, 0)" : "translate(-100%, 0)",
         }}
       />
     </div>
