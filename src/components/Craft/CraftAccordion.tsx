@@ -49,9 +49,14 @@ const CraftAccordion = ({
           <label className="accordion-label">fullstack</label>
         </div>
 
-        <button className="github-button">
+        <a
+          className="github-button"
+          href="https://github.com/Joro0/SKU-Verifier"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FontAwesomeIcon icon={faGithub} /> View Code
-        </button>
+        </a>
       </div>
     </div>
   );

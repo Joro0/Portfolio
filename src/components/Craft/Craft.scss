@@ -39,6 +39,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
       .accordion-container {
         overflow: hidden;
       }
@@ -116,11 +117,19 @@
         border: none;
         background: none;
         cursor: pointer;
+        text-decoration: none;
+        color: var.$text-color-craft;
+        text-align: center;
+      }
+      .github-button:hover {
+        color: var.$text-color-craft;
       }
     }
 
     .image-container {
       flex-grow: 1;
+      width: 100%;
+      aspect-ratio: 16 / 9;
       position: relative;
       overflow: hidden;
       justify-content: flex-start;
@@ -130,12 +139,18 @@
 
       .image-item {
         display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: auto;
         max-width: 100%;
         max-height: 100%;
-        border-radius: 30px;
         object-fit: cover;
+        z-index: 1;
+      }
+      .image-item.show-item {
+        z-index: 2;
       }
     }
   }
@@ -154,6 +169,12 @@
         }
         &.right {
           flex-direction: row-reverse;
+        }
+      }
+
+      .image-container {
+        .image-item {
+          border-radius: 30px;
         }
       }
     }
@@ -196,6 +217,11 @@
               padding: 10px 10px;
             }
           }
+        }
+      }
+      .image-container {
+        .image-item {
+          border-radius: 30px;
         }
       }
     }
@@ -264,6 +290,11 @@
         }
         &.right {
           flex-direction: row-reverse;
+        }
+      }
+      .image-container {
+        .image-item {
+          border-radius: 15px;
         }
       }
     }

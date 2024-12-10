@@ -24,46 +24,22 @@ const CraftImages = ({ selectedItem, itemData }: Props) => {
     };
 
     preloadImages();
-  }, [itemData]);
+  }, []);
 
   if (!imagesLoaded) {
-    return <div>Loading...</div>; // Optional: Show a loader while preloading
+    return <div>Loading...</div>;
   }
   return (
     <div className="image-container">
-      <img
-        src={itemData[0].img}
-        loading="lazy"
-        alt={`Craft image ${0 + 1}`}
-        key={0}
-        className="image-item"
-        style={{
-          transform:
-            selectedItem === 0 ? "translate(0, 0)" : "translate(100%, 0)",
-        }}
-      />
-      <img
-        src={itemData[1].img}
-        loading="lazy"
-        alt={`Craft image ${1 + 1}`}
-        key={1}
-        className="image-item"
-        style={{
-          transform:
-            selectedItem === 1 ? "translate(-100%, 0)" : "translate(0, 0)",
-        }}
-      />
-      <img
-        src={itemData[2].img}
-        loading="lazy"
-        alt={`Craft image ${2 + 1}`}
-        key={2}
-        className="image-item"
-        style={{
-          transform:
-            selectedItem === 2 ? "translate(-200%, 0)" : "translate(-100%, 0)",
-        }}
-      />
+      {itemData.map((item, index) => (
+        <img
+          src={item.img}
+          loading="lazy"
+          alt={`Craft image ${index + 1}`}
+          key={index}
+          className={`image-item ${index === selectedItem ? "show-item" : ""}`}
+        />
+      ))}
     </div>
   );
 };
