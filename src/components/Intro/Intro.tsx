@@ -33,7 +33,7 @@ const Intro = ({ id }: Props) => {
             <p>Joro</p>
           </div>
           <div className="logo-description">
-            <p>Software Designer</p>
+            <p>Web Developer</p>
           </div>
         </div>
       </div>
