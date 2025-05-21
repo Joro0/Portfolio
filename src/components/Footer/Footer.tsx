@@ -54,7 +54,7 @@ const Footer = ({ id }: Props) => {
           </li>
           <li>
             <a
-              href="/Portfolio/pdf/cv-jose-zuniga.pdf"
+              href="/pdf/cv-jose-zuniga.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
